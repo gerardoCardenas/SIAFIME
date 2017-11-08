@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="783.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.UsuarioListController">
+   <children>
+      <TableView id="tvUsuario" fx:id="tvUsuario" layoutY="97.0" prefHeight="445.0" prefWidth="805.0">
+        <columns>
+          <TableColumn id="tbId" fx:id="tbId" prefWidth="75.0" text="id Usuario" />
+          <TableColumn id="tbUsuario" fx:id="tbUsuario" prefWidth="254.0" text="Usuario" />
+            <TableColumn id="tbContraseña" fx:id="tbContraseña" prefWidth="290.0" text="Contraseña" />
+            <TableColumn id="TbTipo" fx:id="TbTipo" prefWidth="185.0" text="Tipo de Usuario" />
+        </columns>
+         <contextMenu>
+            <ContextMenu id="cmOpciones" fx:id="cmOpciones">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </TableView>
+      <Button id="btnNuevo" fx:id="btnNuevo" defaultButton="true" layoutX="557.0" layoutY="42.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button id="btnBuscar" fx:id="btnBuscar" defaultButton="true" layoutX="436.0" layoutY="42.0" mnemonicParsing="false" onAction="#buscar" text="Buscar">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label layoutX="14.0" layoutY="42.0" text="Usuario:">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField id="tbxUsuario" fx:id="tbxUsuario" layoutX="108.0" layoutY="41.0">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </TextField>
+      <Hyperlink layoutX="750.0" onAction="#regresar" text="Regresar" />
+   </children>
+</AnchorPane>

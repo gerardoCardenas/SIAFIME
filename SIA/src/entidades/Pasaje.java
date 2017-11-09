@@ -10,13 +10,17 @@ package entidades;
  * @author emmanuel medina
  * Clase: pasaje
  * 09/11/2017
+ * 
+ * Modifico Gerardo Cardenas
+ * 
+ * Se cambia la varible valor a float
  */
 public class Pasaje {
     
     private int idPasaje;
     private String clase;
     private String asiento;
-    private String valor;
+    private float valor;
     private int idCliente;
     private int idVuelo;
 
@@ -44,11 +48,11 @@ public class Pasaje {
         this.asiento = asiento;
     }
 
-    public String getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
 
@@ -71,14 +75,12 @@ public class Pasaje {
     public Pasaje() {
     }
 
-    public Pasaje(String clase, String asiento, String valor, int idCliente, int idVuelo) {
+    public Pasaje(String clase, String asiento, float valor, int idCliente, int idVuelo) {
         this.clase = clase;
         this.asiento = asiento;
         this.valor = valor;
         this.idCliente = idCliente;
         this.idVuelo = idVuelo;
     }
-    
-    
-    
+
 }

@@ -23,7 +23,6 @@ public class SIA extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Estatico.fxml"));
-        
         Scene scene = new Scene(root);
         stage2 = new Stage();
         stage2.setScene(scene);

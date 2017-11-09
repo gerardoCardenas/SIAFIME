@@ -21,6 +21,8 @@ import lanzadores.LoginLaunch;
  * @author Gerardo
  * 29/10/2017
  * Se cierra la conexion ala base de datos.
+ * 
+ * 
  */
 public class Usuario {
     private int idUsuario;
@@ -29,7 +31,6 @@ public class Usuario {
     private String tipoUsuario;
     
     //Se aplica el encapsulamiento
-
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -77,8 +78,8 @@ public class Usuario {
             Usuario datos = new Usuario(r1.getString("Usuario"),r1.getString("Contraseña"), r1.getString("TipoUsuario"));
             datos.setIdUsuario(r1.getInt("idUsuario"));
             
-            if(datos.getUsuario().equals("")){
-                return false;
+            if(!datos.getUsuario().equals(usuario) || !(datos.getContraseña().equals(contraseña))){
+                throw new Exception();
             }
             else{
                 AdministradorLaunch al1 = new AdministradorLaunch();
@@ -109,14 +110,15 @@ public class Usuario {
 
     public Usuario() {
     }
+    
     public boolean insert(String usuario,String contraseña, String tipoUsuario){
         String query = "INSERT INTO `usuarios` ( `Usuario`, `Contraseña`, `TipoUsuario`) VALUES ('gera', 'gera', 'admin')";
         return false;
     }
+    
     public boolean update(String usuario,String contraseña, String tipoUsuario){
         String query;
         query = "UPDATE `usuarios` SET `TipoUsuario` = 'empleado' WHERE `usuarios`.`idUsuario` = 1";
         return false;
     }
-    
 }

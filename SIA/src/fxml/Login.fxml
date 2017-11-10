@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.LoginController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" stylesheets="@estillo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.LoginController">
    <children>
-      <Label layoutX="173.0" layoutY="245.0" mouseTransparent="true" text="Usuario:" />
-      <TextField id="tbxUsuario" fx:id="tbxUsuario" layoutX="241.0" layoutY="240.0" promptText="Ingrese su usuario" />
-      <Label layoutX="160.0" layoutY="290.0" mouseTransparent="true" text="Contraseña:" />
-      <PasswordField id="tbxContraseña" fx:id="tbxContraseña" layoutX="241.0" layoutY="285.0" promptText="Ingrese su contraseña" />
-      <ImageView fitHeight="143.0" fitWidth="139.0" layoutX="251.0" layoutY="65.0" pickOnBounds="true">
-         <image>
-            <Image url="@../imagenes/Sia.jpg" />
-         </image>
-      </ImageView>
-      <Button id="btnLogin" fx:id="btnLogin" defaultButton="true" layoutX="288.0" layoutY="351.0" mnemonicParsing="false" onAction="#Login" text="Ingresar" />
+      <Pane id="fondo" prefHeight="480.0" prefWidth="640.0">
+         <children>
+            <Pane id="fondo2" layoutX="186.0" layoutY="62.0" prefHeight="333.0" prefWidth="269.0">
+               <children>
+                  <Label layoutX="97.0" layoutY="64.0" mouseTransparent="true" text="Usuario:" textFill="WHITE">
+                     <font>
+                        <Font name="Liberation Mono" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Button id="btnLogin" fx:id="btnLogin" defaultButton="true" layoutX="284.0" layoutY="285.0" mnemonicParsing="false" onAction="#Login" stylesheets="@estillo.css" text="Ingresar" />
+      <PasswordField id="tbxContraseña" fx:id="tbxContraseña" alignment="CENTER" layoutX="235.0" layoutY="228.0" promptText="Ingrese su contraseña" />
+      <Label layoutX="269.0" layoutY="195.0" mouseTransparent="true" text="Contraseña:" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono" size="15.0" />
+         </font>
+      </Label>
+      <TextField id="tbxUsuario" fx:id="tbxUsuario" alignment="CENTER" layoutX="234.0" layoutY="156.0" promptText="Ingrese su usuario" />
    </children>
 </Pane>

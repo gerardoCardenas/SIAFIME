@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistrarUsuarioController">
-    
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistrarUsuarioController">
+   <children>
+      <Label layoutX="99.0" layoutY="22.0" text="Agregar Nuevo Usuario">
+         <font>
+            <Font name="Liberation Mono" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="224.0" layoutY="109.0" text="Nombre:">
+         <font>
+            <Font name="Liberation Mono" size="15.0" />
+         </font></Label>
+      <TextField layoutX="164.0" layoutY="134.0" />
+      <Label layoutX="215.0" layoutY="192.0" text="Contraceña:" />
+      <TextField layoutX="166.0" layoutY="217.0" />
+      <ComboBox layoutX="184.0" layoutY="297.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="136.0" promptText="Opciones" />
+      <Label layoutX="199.0" layoutY="264.0" text="Tipo de Usuario" />
+   </children>
 </AnchorPane>

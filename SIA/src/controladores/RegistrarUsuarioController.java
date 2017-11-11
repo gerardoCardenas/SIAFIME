@@ -29,7 +29,7 @@ public class RegistrarUsuarioController implements Initializable {
     @FXML
     private TextField contraceñauser;
     @FXML
-    private ComboBox<?> tipouser;
+    private ComboBox<String> tipouser;
     @FXML
     private Button btAgregar;
 

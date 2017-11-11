@@ -22,7 +22,7 @@ public class Origen {
     private String nAerolinea;
     private String ciudad;
     private int idCiudad;
-    private Date lastUpdate;
+    private String lastUpdate;
     private String lastUpdateBy;
     
     
@@ -60,11 +60,11 @@ public class Origen {
         this.idCiudad = idCiudad;
     }
 
-    public Date getLastUpdate() {
+    public String getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(Date lastUpdate) {
+    public void setLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 

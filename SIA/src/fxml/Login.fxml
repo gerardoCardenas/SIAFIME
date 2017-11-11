@@ -12,22 +12,25 @@
          <children>
             <Pane id="fondo2" layoutX="186.0" layoutY="62.0" prefHeight="333.0" prefWidth="269.0">
                <children>
-                  <Label layoutX="97.0" layoutY="64.0" mouseTransparent="true" text="Usuario:" textFill="WHITE">
+                  <Label layoutX="97.0" layoutY="52.0" mouseTransparent="true" text="Usuario:" textFill="WHITE">
                      <font>
-                        <Font name="Liberation Mono" size="15.0" />
+                        <Font name="Liberation Mono" size="16.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
          </children>
       </Pane>
-      <Button id="btnLogin" fx:id="btnLogin" defaultButton="true" layoutX="284.0" layoutY="285.0" mnemonicParsing="false" onAction="#Login" stylesheets="@estillo.css" text="Ingresar" />
-      <PasswordField id="tbxContraseña" fx:id="tbxContraseña" alignment="CENTER" layoutX="235.0" layoutY="228.0" promptText="Ingrese su contraseña" />
-      <Label layoutX="269.0" layoutY="195.0" mouseTransparent="true" text="Contraseña:" textFill="WHITE">
+      <Button id="btnLogin" fx:id="btnLogin" defaultButton="true" layoutX="272.0" layoutY="301.0" mnemonicParsing="false" onAction="#Login" stylesheets="@estillo.css" text="Ingresar">
          <font>
-            <Font name="Liberation Mono" size="15.0" />
+            <Font name="Liberation Mono" size="14.0" />
+         </font></Button>
+      <PasswordField id="tbxContraseña" fx:id="tbxContraseña" alignment="CENTER" layoutX="235.0" layoutY="241.0" promptText="Ingrese su contraseña" />
+      <Label layoutX="269.0" layoutY="205.0" mouseTransparent="true" text="Contraseña:" textFill="WHITE">
+         <font>
+            <Font name="Liberation Mono" size="16.0" />
          </font>
       </Label>
-      <TextField id="tbxUsuario" fx:id="tbxUsuario" alignment="CENTER" layoutX="234.0" layoutY="156.0" promptText="Ingrese su usuario" />
+      <TextField id="tbxUsuario" fx:id="tbxUsuario" alignment="CENTER" layoutX="234.0" layoutY="155.0" promptText="Ingrese su usuario" />
    </children>
 </Pane>

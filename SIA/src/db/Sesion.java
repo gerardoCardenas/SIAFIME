@@ -5,10 +5,22 @@
  */
 package db;
 
+import entidades.Usuario;
+
 /**
  *
  * @author Gerardo
+ * 11/11/2017
  */
 public class Sesion {
-    
+
+    private static  Usuario usuario;
+    //Patron de diseño para una sesion
+    public final void persistir(Usuario u){
+         usuario = u;
+    }
+    //Geter
+    public String obtenerUsuario(){
+        return usuario.getUsuario();
+    }
 }

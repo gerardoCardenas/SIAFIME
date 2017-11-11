@@ -5,11 +5,13 @@
  */
 package lanzadores;
 
+import db.Sesion;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,6 +32,8 @@ public class UsuarioListLaunch {
             stage.show();
             stage.centerOnScreen();
             stage.setResizable(false);
+            Sesion s1 = new Sesion();
+            JOptionPane.showMessageDialog(null, s1.obtenerUsuario());
         } catch (Exception e) {
         }
     }

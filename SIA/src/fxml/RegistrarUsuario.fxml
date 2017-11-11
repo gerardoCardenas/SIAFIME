@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,21 +11,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="490.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistrarUsuarioController">
+<AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistrarUsuarioController">
    <children>
-      <Label layoutX="99.0" layoutY="22.0" text="Agregar Nuevo Usuario">
-         <font>
-            <Font name="Liberation Mono" size="23.0" />
-         </font>
-      </Label>
-      <Label layoutX="224.0" layoutY="109.0" text="Nombre:">
-         <font>
-            <Font name="Liberation Mono" size="15.0" />
-         </font></Label>
-      <TextField layoutX="164.0" layoutY="134.0" />
-      <Label layoutX="215.0" layoutY="192.0" text="Contraceña:" />
-      <TextField layoutX="166.0" layoutY="217.0" />
-      <ComboBox layoutX="184.0" layoutY="297.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="136.0" promptText="Opciones" />
-      <Label layoutX="199.0" layoutY="264.0" text="Tipo de Usuario" />
+      <Pane id="pie" prefHeight="533.0" prefWidth="728.0" stylesheets="@estillo.css">
+         <children>
+            <Label layoutX="219.0" layoutY="48.0" text="Agregar Nuevo Usuario" textFill="#13b8eb">
+               <font>
+                  <Font name="Liberation Mono" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="459.0" layoutY="242.0" text="Contraceña:" textFill="#0f9cdd">
+               <font>
+                  <Font name="Inconsolata Regular" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="477.0" layoutY="153.0" stylesheets="@estillo.css" text="Nombre:" textFill="#0f9cdd">
+               <font>
+                  <Font name="Inconsolata Regular" size="18.0" />
+               </font>
+            </Label>
+            <TextField id="nombreUser" alignment="CENTER" layoutX="423.0" layoutY="191.0" stylesheets="@estillo.css" />
+            <TextField alignment="CENTER" layoutX="423.0" layoutY="277.0" />
+            <Label layoutX="441.0" layoutY="323.0" text="Tipo de Usuario" textFill="#0f9cdd">
+               <font>
+                  <Font name="Inconsolata Regular" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="440.0" layoutY="369.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="136.0" promptText="Opciones" />
+            <ImageView fitHeight="327.0" fitWidth="290.0" layoutX="119.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/user.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

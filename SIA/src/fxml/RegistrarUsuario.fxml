@@ -13,36 +13,37 @@
 
 <AnchorPane id="AnchorPane" prefHeight="533.0" prefWidth="728.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistrarUsuarioController">
    <children>
-      <Pane id="pie" prefHeight="533.0" prefWidth="728.0" stylesheets="@estillo.css">
+      <Pane id="pie" fx:id="pie" prefHeight="533.0" prefWidth="728.0" stylesheets="@estillo.css">
          <children>
             <Label layoutX="219.0" layoutY="48.0" text="Agregar Nuevo Usuario" textFill="#13b8eb">
                <font>
                   <Font name="Liberation Mono" size="23.0" />
                </font>
             </Label>
-            <Label layoutX="459.0" layoutY="242.0" text="Contraceña:" textFill="#0f9cdd">
+            <Label layoutX="459.0" layoutY="226.0" text="Contraceña:" textFill="#0f9cdd">
                <font>
                   <Font name="Inconsolata Regular" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="477.0" layoutY="153.0" stylesheets="@estillo.css" text="Nombre:" textFill="#0f9cdd">
+            <Label layoutX="477.0" layoutY="137.0" stylesheets="@estillo.css" text="Nombre:" textFill="#0f9cdd">
                <font>
                   <Font name="Inconsolata Regular" size="18.0" />
                </font>
             </Label>
-            <TextField id="nombreUser" alignment="CENTER" layoutX="423.0" layoutY="191.0" stylesheets="@estillo.css" />
-            <TextField alignment="CENTER" layoutX="423.0" layoutY="277.0" />
-            <Label layoutX="441.0" layoutY="323.0" text="Tipo de Usuario" textFill="#0f9cdd">
+            <TextField id="nombreUser" fx:id="nombreUser" alignment="CENTER" layoutX="423.0" layoutY="175.0" stylesheets="@estillo.css" />
+            <TextField id="contraceñauser" fx:id="contraceñauser" alignment="CENTER" layoutX="423.0" layoutY="261.0" />
+            <Label layoutX="441.0" layoutY="307.0" text="Tipo de Usuario" textFill="#0f9cdd">
                <font>
                   <Font name="Inconsolata Regular" size="18.0" />
                </font>
             </Label>
-            <ComboBox layoutX="440.0" layoutY="369.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="136.0" promptText="Opciones" />
+            <ComboBox id="tipouser" fx:id="tipouser" layoutX="440.0" layoutY="353.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="136.0" promptText="Opciones" />
             <ImageView fitHeight="327.0" fitWidth="290.0" layoutX="119.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../imagenes/user.png" />
                </image>
             </ImageView>
+            <Button id="btAgregar" fx:id="btAgregar" layoutX="478.0" layoutY="421.0" mnemonicParsing="false" text="Agregar" />
          </children>
       </Pane>
    </children>

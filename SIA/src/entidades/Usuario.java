@@ -8,6 +8,7 @@ package entidades;
 
 
 import db.Conexion;
+import db.Sesion;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -108,7 +109,9 @@ public class Usuario {
                 al1.launch();
                 LoginLaunch l1 = new LoginLaunch();
                 l1.close();
-                JOptionPane.showMessageDialog(null, "Bienvenido " + datos.getUsuario());
+                Sesion s1 = new Sesion();
+                s1.persistir(datos);
+                JOptionPane.showMessageDialog(null, "Bienvenido " + s1.obtenerUsuario());
             }
             
         } catch (Exception e) {

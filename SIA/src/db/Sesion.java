@@ -16,7 +16,7 @@ public class Sesion {
 
     private static  Usuario usuario;
     //Patron de diseño para una sesion
-    public final void persistir(Usuario u){
+    public static void persistir(Usuario u){
          usuario = u;
     }
     //Geter

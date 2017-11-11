@@ -6,12 +6,15 @@
 package controladores;
 
 import db.Conexion;
+import db.Sesion;
 import entidades.Usuario;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -54,6 +57,10 @@ public class UsuarioListController implements Initializable {
     @FXML
     private TextField tbxUsuario;
     public ObservableList<Usuario> data = FXCollections.observableArrayList();// Se usa esta coleccion para poder manipular los datos
+    @FXML
+    private TableColumn<Usuario, String> cbLastUpdate;
+    @FXML
+    private TableColumn<Usuario, String> cbLastUpdateBy;
     /**
      * Initializes the controller class.
      */
@@ -84,6 +91,8 @@ public class UsuarioListController implements Initializable {
         tbUsuario.setCellValueFactory(new PropertyValueFactory<>("Usuario"));
         tbContraseña.setCellValueFactory(new PropertyValueFactory<>("Contraseña"));
         TbTipo.setCellValueFactory(new PropertyValueFactory<>("TipoUsuario"));
+        cbLastUpdate.setCellValueFactory(new PropertyValueFactory<>("lastUpdate"));
+        cbLastUpdateBy.setCellValueFactory(new PropertyValueFactory<>("lastUpdateBy"));
         tvUsuario.setItems(data);
     }
     private void rellenarTabla(){
@@ -99,6 +108,13 @@ public class UsuarioListController implements Initializable {
             while(r1.next()){
                 Usuario u1 = new Usuario(r1.getString("Usuario"),r1.getString("Contraseña"), r1.getString("TipoUsuario"));
                 u1.setIdUsuario(r1.getInt("idUsuario"));
+                Date d1 = new Date(System.currentTimeMillis());
+                LocalDate ld = d1.toLocalDate();
+                String fecha = "";
+                fecha = ld.getDayOfMonth()+ "/" + ld.getMonthValue()+ "/" + ld.getYear();
+                u1.setLastUpdate(fecha);
+                Sesion s = new Sesion();
+                u1.setLastUpdateBy(s.obtenerUsuario());
                 data.add(u1);
             }
         } catch (Exception e) {

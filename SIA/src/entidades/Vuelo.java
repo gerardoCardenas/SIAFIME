@@ -25,7 +25,7 @@ public class Vuelo {
     private String numeroVuelo;
     private int idConpañia;
     private String escala;
-    private Date lastUpdate;
+    private String lastUpdate;
 
     public int getIdVuelo() {
         return idVuelo;
@@ -73,6 +73,14 @@ public class Vuelo {
 
     public void setEscala(String escala) {
         this.escala = escala;
+    }
+
+    public String getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(String lastUpdate) {
+        this.lastUpdate = lastUpdate;
     }
 
     public Vuelo(String capacidad, String modeloAvion, String numeroVuelo, int idConpañia, String escala) {

@@ -20,7 +20,7 @@ import java.sql.Date;
 public class Escala {
     private int idEscala;
     private String descripcion;
-    private Date lastUpdate;
+    private String lastUpdate;
     private String lastUpdateBy;
 
     public int getIdEscala() {
@@ -39,11 +39,11 @@ public class Escala {
         this.descripcion = descripcion;
     }
 
-    public Date getLastUpdate() {
+    public String getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(Date lastUpdate) {
+    public void setLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 

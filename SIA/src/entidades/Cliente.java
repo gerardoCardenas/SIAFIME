@@ -25,7 +25,7 @@ public class Cliente {
    private String telefono;
    private String direccion;
    private String email;
-   private Date lastUpdate;
+   private String lastUpdate;
    private String lastUpdateBy;
    
 
@@ -88,14 +88,13 @@ public class Cliente {
         this.idCliente = idCliente;
     }
 
-    public Date getLastUpdate() {
+    public String getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(Date lastUpdate) {
+    public void setLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
-
     public String getLastUpdateBy() {
         return lastUpdateBy;
     }

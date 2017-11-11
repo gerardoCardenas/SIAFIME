@@ -10,7 +10,7 @@ package entidades;
 import db.Conexion;
 import db.Sesion;
 import java.sql.Connection;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -35,7 +35,7 @@ public class Usuario {
     private String contraseña;
     private String tipoUsuario;
     private String lastUpdateBy;
-    private Date lastUpdate;
+    private String lastUpdate;
     
     //Se aplica el encapsulamiento
     public int getIdUsuario() {
@@ -78,11 +78,11 @@ public class Usuario {
         this.lastUpdateBy = lastUpdateBy;
     }
 
-    public Date getLastUpdate() {
+    public String getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(Date lastUpdate) {
+    public void setLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 

@@ -5,7 +5,6 @@
  */
 package entidades;
 
-import java.sql.Date;
 
 /**
  *
@@ -21,7 +20,7 @@ import java.sql.Date;
 public class Aerolinea {
     private int idAerolinea;
     private String nombre;
-    private Date lastUpdate;
+    private String lastUpdate;
     private String lastUpdateBy;
     
     
@@ -49,11 +48,11 @@ public class Aerolinea {
         this.nombre = nombre;
     }
 
-    public Date getLastUpdate() {
+    public String getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(Date lastUpdate) {
+    public void setLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 

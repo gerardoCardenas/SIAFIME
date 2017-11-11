@@ -12,9 +12,10 @@
       <TableView id="tvUsuario" fx:id="tvUsuario" layoutX="8.0" layoutY="132.0" prefHeight="452.0" prefWidth="840.0">
         <columns>
           <TableColumn id="tbId" fx:id="tbId" prefWidth="115.0" text="id Usuario" />
-          <TableColumn id="tbUsuario" fx:id="tbUsuario" prefWidth="240.0" text="Usuario" />
-            <TableColumn id="tbContraseña" fx:id="tbContraseña" prefWidth="264.0" text="Contraseña" />
-            <TableColumn id="TbTipo" fx:id="TbTipo" prefWidth="220.0" text="Tipo de Usuario" />
+          <TableColumn id="tbUsuario" fx:id="tbUsuario" prefWidth="92.0" text="Usuario" />
+            <TableColumn id="tbContraseña" fx:id="tbContraseña" prefWidth="242.0" text="Contraseña" />
+            <TableColumn id="TbTipo" fx:id="TbTipo" minWidth="0.0" prefWidth="222.0" text="Tipo de Usuario" />
+            <TableColumn id="tbLastUpdate" fx:id="tbLastUpdate" prefWidth="168.0" text="Modificado" />
         </columns>
          <contextMenu>
             <ContextMenu id="cmOpciones" fx:id="cmOpciones">

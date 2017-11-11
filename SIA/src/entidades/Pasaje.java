@@ -31,6 +31,7 @@ public class Pasaje {
     private int idCliente;
     private int idVuelo;
     private Date lastUpdate;
+    private String lastUpdateBy;
 
     public int getIdPasaje() {
         return idPasaje;
@@ -79,6 +80,24 @@ public class Pasaje {
     public void setIdVuelo(int idVuelo) {
         this.idVuelo = idVuelo;
     }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public String getLastUpdateBy() {
+        return lastUpdateBy;
+    }
+
+    public void setLastUpdateBy(String lastUpdateBy) {
+        this.lastUpdateBy = lastUpdateBy;
+    }
+    
+    
 
     public Pasaje() {
     }

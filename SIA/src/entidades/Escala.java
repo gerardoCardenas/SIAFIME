@@ -21,6 +21,7 @@ public class Escala {
     private int idEscala;
     private String descripcion;
     private Date lastUpdate;
+    private String lastUpdateBy;
 
     public int getIdEscala() {
         return idEscala;
@@ -38,6 +39,22 @@ public class Escala {
         this.descripcion = descripcion;
     }
 
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public String getLastUpdateBy() {
+        return lastUpdateBy;
+    }
+
+    public void setLastUpdateBy(String lastUpdateBy) {
+        this.lastUpdateBy = lastUpdateBy;
+    }
+    
     public Escala() {
     }
 

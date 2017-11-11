@@ -22,6 +22,9 @@ public class Aerolinea {
     private int idAerolinea;
     private String nombre;
     private Date lastUpdate;
+    private String lastUpdateBy;
+    
+    
 
     public int getIdAerolinea() {
         return idAerolinea;
@@ -45,4 +48,23 @@ public class Aerolinea {
     public Aerolinea(String nombre) {
         this.nombre = nombre;
     }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public String getLastUpdateBy() {
+        return lastUpdateBy;
+    }
+
+    public void setLastUpdateBy(String lastUpdateBy) {
+        this.lastUpdateBy = lastUpdateBy;
+    }
+    
+    
+    
 }

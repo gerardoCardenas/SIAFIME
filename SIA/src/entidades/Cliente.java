@@ -26,6 +26,8 @@ public class Cliente {
    private String direccion;
    private String email;
    private Date lastUpdate;
+   private String lastUpdateBy;
+   
 
     public int getIdVuelo() {
         return idCliente;
@@ -77,6 +79,32 @@ public class Cliente {
 
     public Cliente() {
     }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public String getLastUpdateBy() {
+        return lastUpdateBy;
+    }
+
+    public void setLastUpdateBy(String lastUpdateBy) {
+        this.lastUpdateBy = lastUpdateBy;
+    }
+    
+    
 
     public Cliente(String nombre, int edad, String telefono, String direccion, String email) {
         this.nombre = nombre;

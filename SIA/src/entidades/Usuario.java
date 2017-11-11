@@ -33,6 +33,7 @@ public class Usuario {
     private String usuario;
     private String contraseña;
     private String tipoUsuario;
+    private String lastUpdateBy;
     private Date lastUpdate;
     
     //Se aplica el encapsulamiento
@@ -67,7 +68,23 @@ public class Usuario {
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
     }
-    
+
+    public String getLastUpdateBy() {
+        return lastUpdateBy;
+    }
+
+    public void setLastUpdateBy(String lastUpdateBy) {
+        this.lastUpdateBy = lastUpdateBy;
+    }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
     //Se hace el metodo personalizado del select para validar el usuario
     public boolean Login(String usuario, String contraseña){
         Conexion c1 = new Conexion();

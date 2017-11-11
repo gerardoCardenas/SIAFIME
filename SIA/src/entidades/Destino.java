@@ -23,6 +23,7 @@ public class Destino {
     private String ciudad;
     private int idCiudad;
     private Date lastUpdate;
+    private String lastUpdateBy;
 
 
     public int getIdDestino() {
@@ -55,6 +56,22 @@ public class Destino {
 
     public void setIdCiudad(int idCiudad) {
         this.idCiudad = idCiudad;
+    }
+
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(Date lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public String getLastUpdateBy() {
+        return lastUpdateBy;
+    }
+
+    public void setLastUpdateBy(String lastUpdateBy) {
+        this.lastUpdateBy = lastUpdateBy;
     }
 
     public Destino() {

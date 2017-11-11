@@ -9,6 +9,7 @@ package entidades;
 
 import db.Conexion;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -22,13 +23,17 @@ import lanzadores.LoginLaunch;
  * 29/10/2017
  * Se cierra la conexion ala base de datos.
  * 
+ * 10/11/2017 
+ * Modifico Gerardo Cardenas
  * 
+ * Se agrega el lastUpdate
  */
 public class Usuario {
     private int idUsuario;
     private String usuario;
     private String contraseña;
     private String tipoUsuario;
+    private Date lastUpdate;
     
     //Se aplica el encapsulamiento
     public int getIdUsuario() {

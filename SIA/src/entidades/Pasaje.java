@@ -5,6 +5,8 @@
  */
 package entidades;
 
+import java.sql.Date;
+
 /**
  *
  * @author emmanuel medina
@@ -14,6 +16,11 @@ package entidades;
  * Modifico Gerardo Cardenas
  * 
  * Se cambia la varible valor a float
+ * 
+ *  * 10/11/2017 
+ * Modifico Gerardo Cardenas
+ * 
+ * Se agrega el lastUpdate
  */
 public class Pasaje {
     
@@ -23,6 +30,7 @@ public class Pasaje {
     private float valor;
     private int idCliente;
     private int idVuelo;
+    private Date lastUpdate;
 
     public int getIdPasaje() {
         return idPasaje;

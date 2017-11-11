@@ -5,16 +5,25 @@
  */
 package entidades;
 
+import java.sql.Date;
+
 /**
  *09/11/2017
  * @author Pablo I
  * Clase Destino
+ * 
+ *  * 10/11/2017 
+ * Modifico Gerardo Cardenas
+ * 
+ * Se agrega el lastUpdate
  */
 public class Destino {
     private int idDestino;
     private String nAerolineas;
     private String ciudad;
     private int idCiudad;
+    private Date lastUpdate;
+
 
     public int getIdDestino() {
         return idDestino;

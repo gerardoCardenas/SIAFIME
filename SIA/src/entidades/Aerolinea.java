@@ -5,15 +5,23 @@
  */
 package entidades;
 
+import java.sql.Date;
+
 /**
  *
  * @author Gerardo
  * Clase: Aerolinea
  * 09/11/2017
+ * 
+ * 10/11/2017 
+ * Modifico Gerardo Cardenas
+ * 
+ * Se agrega el lastUpdate
  */
 public class Aerolinea {
     private int idAerolinea;
     private String nombre;
+    private Date lastUpdate;
 
     public int getIdAerolinea() {
         return idAerolinea;

@@ -5,11 +5,18 @@
  */
 package entidades;
 
+import java.sql.Date;
+
 /**
  *
  * @author emmanuel medina
  * Clase: Cliente
  * Fecha: 9/11/2017
+ * 
+ *  * 10/11/2017 
+ * Modifico Gerardo Cardenas
+ * 
+ * Se agrega el lastUpdate
  */
 public class Cliente {
    private int idCliente;
@@ -18,6 +25,7 @@ public class Cliente {
    private String telefono;
    private String direccion;
    private String email;
+   private Date lastUpdate;
 
     public int getIdVuelo() {
         return idCliente;

@@ -5,14 +5,22 @@
  */
 package entidades;
 
+import java.sql.Date;
+
 /**
  *09/11/2017
  * @author Pablo I
  * Entidad escala
+ * 
+ *  * 10/11/2017 
+ * Modifico Gerardo Cardenas
+ * 
+ * Se agrega el lastUpdate
  */
 public class Escala {
     private int idEscala;
     private String descripcion;
+    private Date lastUpdate;
 
     public int getIdEscala() {
         return idEscala;

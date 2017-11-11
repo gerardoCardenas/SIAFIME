@@ -5,16 +5,25 @@
  */
 package entidades;
 
+import java.sql.Date;
+
 /**
  *09/11/2017
  * @author Pablo I
  * Origen
+ * 
+ *  * 10/11/2017 
+ * Modifico Gerardo Cardenas
+ * 
+ * Se agrega el lastUpdate
  */
 public class Origen {
     private int idOrigen;
     private String nAerolinea;
     private String ciudad;
     private int idCiudad;
+    private Date lastUpdate;
+    
     
     //Se aplica el encapsulamiento
 

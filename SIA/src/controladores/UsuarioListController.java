@@ -29,6 +29,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
+import lanzadores.RegistrarUsuarioLaunch;
 import lanzadores.UsuarioListLaunch;
 
 /**
@@ -72,6 +73,10 @@ public class UsuarioListController implements Initializable {
 
     @FXML
     private void nuevo(ActionEvent event) {
+        RegistrarUsuarioLaunch rul = new RegistrarUsuarioLaunch();
+        rul.launch();
+        UsuarioListLaunch ull = new UsuarioListLaunch();
+        ull.close();
     }
 
     @FXML

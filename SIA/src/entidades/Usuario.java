@@ -17,6 +17,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
 import lanzadores.LoginLaunch;
+import sia.Fechas;
 
 /**
  *
@@ -136,9 +137,29 @@ public class Usuario {
     public Usuario() {
     }
     
-    public boolean insert(String usuario,String contraseña, String tipoUsuario){
-        String query = "INSERT INTO `usuarios` ( `Usuario`, `Contraseña`, `TipoUsuario`) VALUES ('gera', 'gera', 'admin')";
-        return false;
+    public boolean insert(){
+        Conexion c1 = new Conexion();
+        Connection co = c1.conectar();
+        Fechas f = new Fechas();
+        Sesion s1 = new Sesion();
+        String query = "INSERT INTO `usuarios` (`Usuario`, `Contraseña`, `TipoUsuario`, `lastUpdate`, `lastUpdateBy`) VALUES ('" + usuario+"', '"  + contraseña + "', '" + tipoUsuario+"', '"  + f.obtenerFecha()+"','"+ s1.obtenerUsuario()+"');" ;
+        boolean val = false;
+        System.out.println(query);
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
     }
     
     public boolean update(String usuario,String contraseña, String tipoUsuario){

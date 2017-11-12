@@ -33,7 +33,6 @@ public class UsuarioListLaunch {
             stage.centerOnScreen();
             stage.setResizable(false);
             Sesion s1 = new Sesion();
-            JOptionPane.showMessageDialog(null, s1.obtenerUsuario());
         } catch (Exception e) {
         }
     }

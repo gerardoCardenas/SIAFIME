@@ -136,7 +136,7 @@ public class Usuario {
 
     public Usuario() {
     }
-    
+    //Se inserta el usuario
     public boolean insert(){
         Conexion c1 = new Conexion();
         Connection co = c1.conectar();
@@ -162,9 +162,50 @@ public class Usuario {
         return val;
     }
     
-    public boolean update(String usuario,String contraseña, String tipoUsuario){
+    public boolean update(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
         String query;
-        query = "UPDATE `usuarios` SET `TipoUsuario` = 'empleado' WHERE `usuarios`.`idUsuario` = 1";
-        return false;
+        Fechas f = new Fechas();
+        Sesion s = new Sesion();
+        query = "UPDATE `usuarios` SET `Usuario` = '" + this.usuario+"', `Contraseña` = '" + this.contraseña +"', `TipoUsuario` = '"+ tipoUsuario + "', `lastUpdate` = '" +f.obtenerFecha()+"', `lastUpdateBy` = '"+s.obtenerUsuario()+"' WHERE `usuarios`.`idUsuario` = "+ this.idUsuario + ";";
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
+    }
+    public boolean delete(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        query = "DELETE FROM `usuarios` WHERE `usuarios`.`idUsuario` = " +this.idUsuario;
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
     }
 }

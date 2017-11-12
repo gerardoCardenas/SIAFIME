@@ -15,7 +15,7 @@
    <children>
       <Pane id="pie" fx:id="pie" prefHeight="533.0" prefWidth="728.0" stylesheets="@estillo.css">
          <children>
-            <Label layoutX="219.0" layoutY="48.0" text="Agregar Nuevo Usuario" textFill="#13b8eb">
+            <Label id="lbEncabezado" fx:id="lbEncabezado" layoutX="219.0" layoutY="48.0" text="Agregar Nuevo Usuario" textFill="#13b8eb">
                <font>
                   <Font name="Liberation Mono" size="23.0" />
                </font>

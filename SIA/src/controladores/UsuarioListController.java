@@ -1,32 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controladores;
 
 import db.Conexion;
-import db.Sesion;
 import entidades.Usuario;
+import facade.UsuarioFacade;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.ContextMenuEvent;
 import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
 import lanzadores.RegistrarUsuarioLaunch;
@@ -41,8 +37,6 @@ public class UsuarioListController implements Initializable {
 
     @FXML
     private TableView<Usuario> tvUsuario;
-    @FXML
-    private ContextMenu cmOpciones;
     @FXML
     private TableColumn<Usuario, Integer> tbId;
     @FXML
@@ -69,10 +63,12 @@ public class UsuarioListController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         setTable();
         rellenarTabla();
+        
     }    
 
     @FXML
     private void nuevo(ActionEvent event) {
+        UsuarioFacade.setEstado("Agregar");
         RegistrarUsuarioLaunch rul = new RegistrarUsuarioLaunch();
         rul.launch();
         UsuarioListLaunch ull = new UsuarioListLaunch();
@@ -113,18 +109,46 @@ public class UsuarioListController implements Initializable {
             while(r1.next()){
                 Usuario u1 = new Usuario(r1.getString("Usuario"),r1.getString("Contraseña"), r1.getString("TipoUsuario"));
                 u1.setIdUsuario(r1.getInt("idUsuario"));
-                Date d1 = new Date(System.currentTimeMillis());
-                LocalDate ld = d1.toLocalDate();
-                String fecha = "";
-                fecha = ld.getDayOfMonth()+ "/" + ld.getMonthValue()+ "/" + ld.getYear();
-                u1.setLastUpdate(fecha);
-                Sesion s = new Sesion();
-                u1.setLastUpdateBy(s.obtenerUsuario());
+                u1.setLastUpdate(r1.getString("lastUpdate"));
+                u1.setLastUpdateBy(r1.getString("lastUpdateBy"));
                 data.add(u1);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error en relleno de datos: " + e);
         }
+    }
+    //Hacer la opcion para editar o eliminar Algun registro
+    @FXML
+    private void opcionesUsuario(ContextMenuEvent event) {
+        ContextMenu menu = new ContextMenu();
+        MenuItem itemEditar =new MenuItem("Editar");
+        MenuItem itemEliminar = new MenuItem("Eliminar");
+        itemEditar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Usuario usuario = tvUsuario.getSelectionModel().getSelectedItem();
+                UsuarioFacade.setUsuario(usuario);
+                UsuarioFacade.setEstado("Editar");
+                RegistrarUsuarioLaunch rul3 = new RegistrarUsuarioLaunch();
+                rul3.launch();
+                UsuarioListLaunch ull = new UsuarioListLaunch();
+                ull.close();
+                
+            }
+        });
+        menu.getItems().add(itemEditar);
+        tvUsuario.setContextMenu(menu);
+        itemEliminar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Usuario s = new Usuario();
+                s = tvUsuario.getSelectionModel().getSelectedItem();
+                s.delete();
+                data.clear();
+                rellenarTabla();
+            }
+        });
+        menu.getItems().add(itemEliminar);
     }
     
 }

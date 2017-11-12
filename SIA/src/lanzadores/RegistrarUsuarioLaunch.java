@@ -5,6 +5,7 @@
  */
 package lanzadores;
 
+import db.Sesion;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,9 +26,10 @@ public class RegistrarUsuarioLaunch {
             
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.close();
-            stage.setTitle("Agregue un usuario");
+            stage.setTitle("Usuarios");
             stage.setScene(new Scene(root1));  
             stage.show();
+            stage.centerOnScreen();
             stage.setResizable(false);
         } catch (Exception e) {
         }

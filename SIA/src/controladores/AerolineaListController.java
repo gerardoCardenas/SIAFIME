@@ -16,7 +16,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import lanzadores.AdministradorLaunch;
-import lanzadores.UsuarioListLaunch;
+import lanzadores.AerolineaListLaunch;
 
 /**
  * FXML Controller class
@@ -62,8 +62,14 @@ public class AerolineaListController implements Initializable {
     private void regresar(ActionEvent event) {
         AdministradorLaunch al1 = new AdministradorLaunch();
         al1.launch();
-        UsuarioListLaunch ull1 = new UsuarioListLaunch();
-        ull1.close();
+        AerolineaListLaunch all1 = new AerolineaListLaunch();
+        all1.close();
     }
+    
+    //Inicializando la tabla par poder llenarla
+    private void setTable(){
+        
+    }
+    
     
 }

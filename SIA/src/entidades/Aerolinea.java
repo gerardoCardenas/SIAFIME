@@ -90,13 +90,12 @@ public class Aerolinea {
         Fechas f = new Fechas();
         Sesion s1 = new Sesion();
         String query = "INSERT INTO  `sia`.`aerolineas` (\n" +
-            "`idAerolineas` ,\n" +
             "`Nombre` ,\n" +
             "`lastUpdate` ,\n" +
             "`lastUpdateBy`\n" +
             ")\n" +
             "VALUES (\n" +
-            "NULL ,  '" + nombre + "',  '" + f.obtenerFecha() + "',  '" + s1.obtenerUsuario() +"'\n" +
+            "'" + nombre + "',  '" + f.obtenerFecha() + "',  '" + s1.obtenerUsuario() +"'\n" +
             ");";
         boolean val = false;
         System.out.println(query);

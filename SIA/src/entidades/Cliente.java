@@ -5,6 +5,18 @@
  */
 package entidades;
 
+import db.Conexion;
+import db.Sesion;
+import java.sql.Connection;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import lanzadores.AdministradorLaunch;
+import lanzadores.LoginLaunch;
+import sia.Fechas;
+
 import java.sql.Date;
 
 /**
@@ -102,17 +114,105 @@ public class Cliente {
     public void setLastUpdateBy(String lastUpdateBy) {
         this.lastUpdateBy = lastUpdateBy;
     }
-    
-    
 
-    public Cliente(String nombre, int edad, String telefono, String direccion, String email) {
+    public Cliente(String nombre, int edad, String telefono, String direccion, String email, String lastUpdate, String lastUpdateBy) {
         this.nombre = nombre;
         this.edad = edad;
         this.telefono = telefono;
         this.direccion = direccion;
         this.email = email;
+        this.lastUpdate = lastUpdate;
+        this.lastUpdateBy = lastUpdateBy;
     }
     
-   
+     public boolean insert(){
+        Conexion c1 = new Conexion();
+        Connection co = c1.conectar();
+        Fechas f = new Fechas();
+        Sesion s1 = new Sesion();
+        String query = "INSERT INTO `cliente`(`nombre`, `edad`, `telefono`, `direccion`"
+                + ", `email`, `lastUpdate`, `lastUpdateBy`) VALUES ('"+ nombre +"', '" + edad +"', '" 
+                + telefono +"', '" + direccion +"', '" + email +"', '" + f.obtenerFecha() +"', '" + s1.obtenerUsuario() +"')" ;
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        finally{
+            try {
+                co.close();
+            } catch (Exception e) {
+            }
+        }
+        return val;
+    }  
+    
+     public boolean update(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        Fechas f = new Fechas();
+        Sesion s = new Sesion();
+        query = "UPDATE `cliente` SET `nombre`='" + this.nombre +"',`edad`='" + this.edad + "',"
+                + "`telefono`='" + this.telefono + "'"
+                + ",`direccion`='" + this.direccion + "',`email`='" + this.email + "',"
+                + "`lastUpdate`='" + f.obtenerFecha() + "',`lastUpdateBy`='" + s.obtenerUsuario() + "'"
+                + " WHERE `cliente`.`idCliente` = " + this.idCliente + ";";
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
+    }
+    
+     public boolean delete(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        query = "DELETE FROM `cliente` WHERE `cliente`.`idCliente` = " +this.idCliente;
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        finally{
+            try {
+                co.close();
+            } catch (Exception e) {
+            }
+        }
+        return val;
+    }
    
 }

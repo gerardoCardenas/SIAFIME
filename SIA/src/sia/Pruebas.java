@@ -10,5 +10,7 @@ package sia;
  * @author Gerardo
  */
 public class Pruebas {
-    
+    public static void main(String[] args) {
+        
+    }
 }

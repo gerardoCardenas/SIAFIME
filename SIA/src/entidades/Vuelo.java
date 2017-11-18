@@ -24,8 +24,10 @@ public class Vuelo {
     private String  modeloAvion;
     private String numeroVuelo;
     private int idConpañia;
-    private String escala;
+    private int idEscala;
     private String lastUpdate;
+    private int idOrigen;
+    private int idDestino;
 
     public int getIdVuelo() {
         return idVuelo;
@@ -67,12 +69,12 @@ public class Vuelo {
         this.idConpañia = idConpañia;
     }
 
-    public String getEscala() {
-        return escala;
+    public int getEscala() {
+        return idEscala;
     }
 
-    public void setEscala(String escala) {
-        this.escala = escala;
+    public void setEscala(int escala) {
+        this.idEscala = escala;
     }
 
     public String getLastUpdate() {
@@ -83,12 +85,31 @@ public class Vuelo {
         this.lastUpdate = lastUpdate;
     }
 
-    public Vuelo(String capacidad, String modeloAvion, String numeroVuelo, int idConpañia, String escala) {
+    public int getIdOrigen() {
+        return idOrigen;
+    }
+
+    public void setIdOrigen(int idOrigen) {
+        this.idOrigen = idOrigen;
+    }
+
+    public int getIdDestino() {
+        return idDestino;
+    }
+
+    public void setIdDestino(int idDestino) {
+        this.idDestino = idDestino;
+    }
+    
+
+    public Vuelo(String capacidad, String modeloAvion, String numeroVuelo, int idConpañia, int idEscala, int idOrigen, int idDestino) {
         this.capacidad = capacidad;
         this.modeloAvion = modeloAvion;
         this.numeroVuelo = numeroVuelo;
         this.idConpañia = idConpañia;
-        this.escala = escala;
+        this.idEscala = idEscala;
+        this.idOrigen = idOrigen;
+        this.idDestino = idDestino;
     }
 
     public Vuelo() {

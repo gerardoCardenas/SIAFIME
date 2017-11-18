@@ -6,7 +6,6 @@
 package entidades;
 
 
-
 import db.Conexion;
 import db.Sesion;
 import java.sql.Connection;

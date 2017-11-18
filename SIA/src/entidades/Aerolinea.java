@@ -6,6 +6,18 @@
 package entidades;
 
 
+import db.Conexion;
+import db.Sesion;
+import java.sql.Connection;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+import lanzadores.AdministradorLaunch;
+import lanzadores.LoginLaunch;
+import sia.Fechas;
+
 /**
  *
  * @author Gerardo
@@ -63,7 +75,93 @@ public class Aerolinea {
     public void setLastUpdateBy(String lastUpdateBy) {
         this.lastUpdateBy = lastUpdateBy;
     }
+
     
     
+    public Aerolinea(String nombre, String lastUpdate, String lastUpdateBy) {
+        this.nombre = nombre;
+        this.lastUpdate = lastUpdate;
+        this.lastUpdateBy = lastUpdateBy;
+    }
     
-}
+    public boolean insert(){
+        Conexion c1 = new Conexion();
+        Connection co = c1.conectar();
+        Fechas f = new Fechas();
+        Sesion s1 = new Sesion();
+        String query = "INSERT INTO  `sia`.`aerolineas` (\n" +
+            "`idAerolineas` ,\n" +
+            "`Nombre` ,\n" +
+            "`lastUpdate` ,\n" +
+            "`lastUpdateBy`\n" +
+            ")\n" +
+            "VALUES (\n" +
+            "NULL ,  '" + nombre + "',  '" + f.obtenerFecha() + "',  '" + s1.obtenerUsuario() +"'\n" +
+            ");";
+        boolean val = false;
+        System.out.println(query);
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
+    }
+    
+    public boolean update(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        Fechas f = new Fechas();
+        Sesion s = new Sesion();
+        query = "UPDATE `aerolineas` SET `Nombre`=`"+ this.nombre+"`,`lastUpdate`=`" + f.obtenerFecha() +"`,`lastUpdateBy`=`" + s.obtenerUsuario() +"` WHERE `aerolineas`.`idAerolineas` = " + this.idAerolinea + ";";
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
+    }
+    
+    public boolean delete(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        query = "DELETE FROM `aerolineas` WHERE `aerolineas`.`idAerolineas` = " + this.idAerolinea;
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
+    }
+ }

@@ -77,6 +77,27 @@ public class UsuarioListController implements Initializable {
 
     @FXML
     private void buscar(ActionEvent event) {
+        data.clear();
+        Conexion c1 = new Conexion();
+        Connection co = c1.conectar();
+        String user;
+        user = tbxUsuario.getText();
+        String query = "SELECT * FROM `usuarios` WHERE Usuario = '"+user+"'";
+        Statement stquery;
+        try {
+            stquery = co.createStatement();
+            PreparedStatement ps1 = co.prepareStatement(query);
+            ResultSet r1 = stquery.executeQuery(query);
+            while(r1.next()){
+                Usuario u1 = new Usuario(r1.getString("Usuario"),r1.getString("Contraseña"), r1.getString("TipoUsuario"));
+                u1.setIdUsuario(r1.getInt("idUsuario"));
+                u1.setLastUpdate(r1.getString("lastUpdate"));
+                u1.setLastUpdateBy(r1.getString("lastUpdateBy"));
+                data.add(u1);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error en relleno de datos: " + e);
+        }
     }
 
     @FXML
@@ -123,6 +144,7 @@ public class UsuarioListController implements Initializable {
         ContextMenu menu = new ContextMenu();
         MenuItem itemEditar =new MenuItem("Editar");
         MenuItem itemEliminar = new MenuItem("Eliminar");
+        MenuItem itemActualizar = new MenuItem("Actualizar");
         itemEditar.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -149,6 +171,14 @@ public class UsuarioListController implements Initializable {
             }
         });
         menu.getItems().add(itemEliminar);
+        itemActualizar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                rellenarTabla();
+            }
+        });
+        menu.getItems().add(itemActualizar);
+        tvUsuario.setContextMenu(menu);
     }
     
 }

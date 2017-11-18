@@ -143,7 +143,6 @@ public class Usuario {
         Sesion s1 = new Sesion();
         String query = "INSERT INTO `usuarios` (`Usuario`, `Contraseña`, `TipoUsuario`, `lastUpdate`, `lastUpdateBy`) VALUES ('" + usuario+"', '"  + contraseña + "', '" + tipoUsuario+"', '"  + f.obtenerFecha()+"','"+ s1.obtenerUsuario()+"');" ;
         boolean val = false;
-        System.out.println(query);
         try {
             PreparedStatement ps = co.prepareStatement(query);
             int rowsA = ps.executeUpdate();
@@ -157,6 +156,12 @@ public class Usuario {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        finally{
+            try {
+                co.close();
+            } catch (Exception e) {
+            }
         }
         return val;
     }
@@ -205,6 +210,16 @@ public class Usuario {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error: " + e);
         }
+        finally{
+            try {
+                co.close();
+            } catch (Exception e) {
+            }
+        }
         return val;
+    }
+    public boolean find(){
+        
+        return false;
     }
 }

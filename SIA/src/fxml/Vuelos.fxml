@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.VuelosController">
+   <children>
+      <TableView layoutX="7.0" layoutY="113.0" prefHeight="467.0" prefWidth="843.0">
+        <columns>
+            <TableColumn prefWidth="126.0" text="Numero Vuelo" />
+            <TableColumn prefWidth="166.0" text="Modelo Avion" />
+          <TableColumn minWidth="0.0" prefWidth="109.0" text="Capacidad" />
+            <TableColumn prefWidth="172.0" text="Aerolinea" />
+            <TableColumn prefWidth="269.0" text="Destino" />
+        </columns>
+      </TableView>
+      <Label layoutX="513.0" layoutY="37.0" text="Lista De Vuelos">
+         <font>
+            <Font name="Liberation Mono Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="33.0" text="Buscar Vuelo">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txfBuscar" layoutX="43.0" layoutY="57.0" prefHeight="25.0" prefWidth="266.0" />
+      <Button fx:id="btnBuscar" layoutX="324.0" layoutY="57.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Buscar" />
+   </children>
+</AnchorPane>

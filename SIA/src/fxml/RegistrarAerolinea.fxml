@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="531.0" prefWidth="857.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.RegistrarAerolineaController">
+   <children>
+      <ImageView fitHeight="537.0" fitWidth="857.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/fondoReAe.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="180.0" layoutY="116.0" text="Nombre ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txfNomAero" layoutX="272.0" layoutY="109.0" prefHeight="38.0" prefWidth="406.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+      <Label layoutX="202.0" layoutY="25.0" text="Agregar Aero Linea">
+         <font>
+            <Font name="Liberation Mono Bold" size="42.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

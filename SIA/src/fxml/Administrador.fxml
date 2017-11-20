@@ -9,7 +9,7 @@
 
 <Pane cacheHint="SCALE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AdministradorController">
    <children>
-      <Hyperlink layoutX="244.0" layoutY="183.0" onAction="#verUsuarios" text="Ver Usuarios">
+      <Hyperlink layoutX="243.0" layoutY="173.0" onAction="#verUsuarios" text="Ver Usuarios">
          <font>
             <Font size="18.0" />
          </font></Hyperlink>
@@ -17,7 +17,17 @@
          <font>
             <Font size="18.0" />
          </font></Hyperlink>
-      <Hyperlink id="hlAerolinea" fx:id="hlAerolinea" layoutX="236.0" layoutY="138.0" text="Ver Aerolineas">
+      <Hyperlink id="hlAerolinea" fx:id="hlAerolinea" layoutX="236.0" layoutY="138.0" onAction="#verAerolineas" text="Ver Aerolineas">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink id="hlEscala" fx:id="hlEscala" layoutX="253.0" layoutY="103.0" onAction="#verEscala" text="Ver Escala">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink id="hlCliente" fx:id="hlCliente" layoutX="254.0" layoutY="68.0" onAction="#verCliente" text="Ver Cliente">
          <font>
             <Font size="18.0" />
          </font>

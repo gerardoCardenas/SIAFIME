@@ -11,7 +11,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import lanzadores.AdministradorLaunch;
+import lanzadores.AerolineaListLaunch;
+import lanzadores.EscalaListLaunch;
 import lanzadores.LoginLaunch;
 import lanzadores.UsuarioListLaunch;
 
@@ -22,12 +25,19 @@ import lanzadores.UsuarioListLaunch;
  */
 public class AdministradorController implements Initializable {
 
+    @FXML
+    private Hyperlink hlAerolinea;
+    @FXML
+    private Hyperlink hlEscala;
+    @FXML
+    private Hyperlink hlCliente;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        
     }    
 
     @FXML
@@ -45,5 +55,26 @@ public class AdministradorController implements Initializable {
         al.close();
         LoginController l1 = new LoginController();
         l1.setTextField();
+    }
+
+    @FXML
+    private void verAerolineas(ActionEvent event) {
+        AerolineaListLaunch all = new AerolineaListLaunch();
+        all.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void verEscala(ActionEvent event) {
+        EscalaListLaunch ell = new EscalaListLaunch();
+        ell.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void verCliente(ActionEvent event) {
+        
     }
 }

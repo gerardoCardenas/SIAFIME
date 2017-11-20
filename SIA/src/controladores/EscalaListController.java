@@ -7,7 +7,11 @@ package controladores;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import lanzadores.AdministradorLaunch;
+import lanzadores.EscalaListLaunch;
 
 /**
  * FXML Controller class
@@ -23,5 +27,13 @@ public class EscalaListController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void regresar(ActionEvent event) {
+        AdministradorLaunch al1 = new AdministradorLaunch();
+        al1.launch();
+        EscalaListLaunch ell = new EscalaListLaunch();
+        ell.close();
+    }
     
 }

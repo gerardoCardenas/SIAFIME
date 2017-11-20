@@ -33,7 +33,9 @@ import java.sql.Date;
 public class Cliente {
    private int idCliente;
    private String nombre;
+   private String apellido;
    private int edad;
+   private String genero;
    private String telefono;
    private String direccion;
    private String email;
@@ -45,6 +47,14 @@ public class Cliente {
         return idCliente;
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+    
     public void setIdVuelo(int idVuelo) {
         this.idCliente = idVuelo;
     }
@@ -61,6 +71,14 @@ public class Cliente {
         return edad;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+    
     public void setEdad(int edad) {
         this.edad = edad;
     }
@@ -115,23 +133,27 @@ public class Cliente {
         this.lastUpdateBy = lastUpdateBy;
     }
 
-    public Cliente(String nombre, int edad, String telefono, String direccion, String email, String lastUpdate, String lastUpdateBy) {
+    public Cliente(String nombre, String apellido, int edad, String genero, String telefono, String direccion, String email, String lastUpdate, String lastUpdateBy) {
         this.nombre = nombre;
+        this.apellido = apellido;
         this.edad = edad;
+        this.genero = genero;
         this.telefono = telefono;
         this.direccion = direccion;
         this.email = email;
         this.lastUpdate = lastUpdate;
         this.lastUpdateBy = lastUpdateBy;
     }
+
+    
     
      public boolean insert(){
         Conexion c1 = new Conexion();
         Connection co = c1.conectar();
         Fechas f = new Fechas();
         Sesion s1 = new Sesion();
-        String query = "INSERT INTO `cliente`(`nombre`, `edad`, `telefono`, `direccion`"
-                + ", `email`, `lastUpdate`, `lastUpdateBy`) VALUES ('"+ nombre +"', '" + edad +"', '" 
+        String query = "INSERT INTO `cliente`(`nombre`,`apellido`, `edad`,`genero`, `telefono`, `direccion`"
+                + ", `email`, `lastUpdate`, `lastUpdateBy`) VALUES ('"+ nombre +"','"+ apellido +"', '" + edad +"','" + genero +"', '" 
                 + telefono +"', '" + direccion +"', '" + email +"', '" + f.obtenerFecha() +"', '" + s1.obtenerUsuario() +"')" ;
         boolean val = false;
         try {
@@ -163,7 +185,7 @@ public class Cliente {
         String query;
         Fechas f = new Fechas();
         Sesion s = new Sesion();
-        query = "UPDATE `cliente` SET `nombre`='" + this.nombre +"',`edad`='" + this.edad + "',"
+        query = "UPDATE `cliente` SET `nombre`='" + this.nombre +"',`nombre`='" + this.apellido +"',`edad`='" + this.edad + "',`genero`='" + this.genero + "',"
                 + "`telefono`='" + this.telefono + "'"
                 + ",`direccion`='" + this.direccion + "',`email`='" + this.email + "',"
                 + "`lastUpdate`='" + f.obtenerFecha() + "',`lastUpdateBy`='" + s.obtenerUsuario() + "'"

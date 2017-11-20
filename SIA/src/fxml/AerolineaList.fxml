@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AerolineaListController">
    <children>
-      <TableView id="tbAerolineas" fx:id="tbAerolinea" layoutX="26.0" layoutY="101.0" prefHeight="470.0" prefWidth="806.0">
+      <TableView id="tbAerolineas" fx:id="tbAerolinea" layoutX="26.0" layoutY="101.0" onContextMenuRequested="#opciones" prefHeight="470.0" prefWidth="806.0">
         <columns>
           <TableColumn id="tbcIdAerolinea" fx:id="tbcIdAerolinea" prefWidth="117.0" text="Id Aerolinea" />
           <TableColumn id="tbcNombre" fx:id="tbcNombre" prefWidth="356.0" text="Nombre" />
@@ -18,8 +18,8 @@
       </TableView>
       <Label layoutX="26.0" layoutY="44.0" text="Aerolinea" />
       <TextField id="txtBuscar" fx:id="txtBuscar" layoutX="94.0" layoutY="40.0" prefHeight="25.0" prefWidth="343.0" />
-      <Button id="btnBuscar" fx:id="btnBuscar" layoutX="466.0" layoutY="40.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar" />
-      <Button id="btnNuevo" fx:id="btnNuevo" layoutX="535.0" layoutY="40.0" mnemonicParsing="false" onAction="#Nuevo" text="Nuevo" />
+      <Button id="btnBuscar" fx:id="btnBuscar" defaultButton="true" layoutX="466.0" layoutY="40.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar" />
+      <Button id="btnNuevo" fx:id="btnNuevo" defaultButton="true" layoutX="535.0" layoutY="40.0" mnemonicParsing="false" onAction="#Nuevo" text="Nuevo" />
       <Hyperlink layoutX="773.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
    </children>
 </AnchorPane>

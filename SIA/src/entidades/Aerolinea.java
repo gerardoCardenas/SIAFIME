@@ -122,7 +122,7 @@ public class Aerolinea {
         String query;
         Fechas f = new Fechas();
         Sesion s = new Sesion();
-        query = "UPDATE `aerolineas` SET `Nombre`=`"+ this.nombre+"`,`lastUpdate`=`" + f.obtenerFecha() +"`,`lastUpdateBy`=`" + s.obtenerUsuario() +"` WHERE `aerolineas`.`idAerolineas` = " + this.idAerolinea + ";";
+        query = "UPDATE `aerolineas` SET `nombre`= '"+ this.nombre+"',`lastUpdate`='" + f.obtenerFecha() +"',`lastUpdateBy`='" + s.obtenerUsuario() +"' WHERE `aerolineas`.`idAerolineas` = " + this.idAerolinea + ";";
         boolean val = false;
         try {
             PreparedStatement ps = co.prepareStatement(query);

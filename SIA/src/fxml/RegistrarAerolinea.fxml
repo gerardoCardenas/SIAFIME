@@ -25,15 +25,16 @@
             <Font size="19.0" />
          </font>
       </TextField>
-      <Label layoutX="202.0" layoutY="25.0" text="Agregar Aero Linea">
+      <Label id="lbEtiqueta" fx:id="lbEtiqueta" layoutX="202.0" layoutY="25.0" text="Agregar Aero Linea">
          <font>
             <Font name="Liberation Mono Bold" size="42.0" />
          </font>
       </Label>
-      <Button fx:id="btnAgregar" layoutX="416.0" layoutY="166.0" mnemonicParsing="false" text="Agregar">
+      <Button id="btnGuardar" fx:id="btnAgregar" defaultButton="true" layoutX="416.0" layoutY="166.0" mnemonicParsing="false" onAction="#btnGuardar" text="Agregar">
          <font>
             <Font name="Liberation Mono" size="17.0" />
          </font>
       </Button>
+      <Hyperlink id="btregresar" layoutX="790.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
    </children>
 </AnchorPane>

@@ -5,11 +5,14 @@
  */
 package lanzadores;
 
+import db.Sesion;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
+import static lanzadores.UsuarioListLaunch.stage;
 
 /**
  *
@@ -20,7 +23,7 @@ public class ClienteListLaunch {
     public void launch(){
         try {
             stage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Cliente.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/ClienteList.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -28,7 +31,9 @@ public class ClienteListLaunch {
             stage.setTitle("Registrar Nuevo Cliente");
             stage.setScene(new Scene(root1));  
             stage.show();
+            stage.centerOnScreen();
             stage.setResizable(false);
+            Sesion s1 = new Sesion();
         } catch (Exception e) {
         }
     }

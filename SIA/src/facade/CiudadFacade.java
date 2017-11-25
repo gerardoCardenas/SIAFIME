@@ -7,6 +7,7 @@ package facade;
 
 import db.Conexion;
 import entidades.Aerolinea;
+import entidades.Ciudad;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,18 +16,18 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Gerardo
+ * @author Gerardo Cardenas
  */
-public class AerolineaFacade {
-    private static Aerolinea aerolinea = new Aerolinea();
+public class CiudadFacade {
+    private static Ciudad ciudad;
     private static String estado;
 
-    public static Aerolinea getAerolinea() {
-        return aerolinea;
+    public static Ciudad getCiudad() {
+        return ciudad;
     }
 
-    public static void setAerolinea(Aerolinea aerolinea) {
-        AerolineaFacade.aerolinea = aerolinea;
+    public static void setCiudad(Ciudad ciudad) {
+        CiudadFacade.ciudad = ciudad;
     }
 
     public static String getEstado() {
@@ -34,26 +35,26 @@ public class AerolineaFacade {
     }
 
     public static void setEstado(String estado) {
-        AerolineaFacade.estado = estado;
+        CiudadFacade.estado = estado;
     }
-    
-    public static Aerolinea findById(int id){
+
+    public static Ciudad findById(int id){
         Conexion c1 = new Conexion();
         Connection co = c1.conectar();
-        String query = "SELECT * FROM `aerolineas` WHERE idaerolineas = " + id;
+        String query = "SELECT * FROM `ciudad` WHERE idCiudad = " + id;
         Statement stquery;
-        Aerolinea a1 = new Aerolinea();
+        Ciudad c = new Ciudad();
         try {
             stquery = co.createStatement();
             PreparedStatement ps1 = co.prepareStatement(query);
             ResultSet r1 = stquery.executeQuery(query);
             while(r1.next()){
-                a1.setNombre(r1.getString("nombre"));
-                a1.setLastUpdate(r1.getString("lastUpdate"));
-                a1.setLastUpdateBy(r1.getString("lastUpdateBy"));
-                a1.setIdAerolinea(r1.getInt("idaerolineas"));
+                c.setNombre(r1.getString("nombre"));
+                c.setLastUpdate(r1.getString("lastUpdate"));
+                c.setLastUpdateBy(r1.getString("lastUpdateBy"));
+                c.setIdCiudad(r1.getInt("idCiudad"));
             }
-            return a1;
+            return c;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Error en relleno de datos: " + e);
             return null;

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.OrigenListController">
+   <children>
+      <TableView id="tbAerolineas" fx:id="tbAerolinea" layoutX="26.0" layoutY="101.0" onContextMenuRequested="#opciones" prefHeight="470.0" prefWidth="806.0">
+        <columns>
+          <TableColumn id="tbcIdOrigen" fx:id="tbcIdOrigen" prefWidth="117.0" text="Id Origen" />
+          <TableColumn id="tcAerolinea" fx:id="tcAerolinea" prefWidth="152.0" text="Aerolinea" />
+          <TableColumn id="tcCiudad" fx:id="tcCiudad" prefWidth="198.0" text="Ciudad" />
+            <TableColumn id="tbcFMod" fx:id="tbcFMod" minWidth="0.0" prefWidth="142.0" text="Fecha de Modificacion" />
+            <TableColumn id="tbcModP" fx:id="tbcModP" prefWidth="196.0" text="Modificado por" />
+            
+        </columns>
+      </TableView>
+      <Label layoutX="26.0" layoutY="44.0" text="Origen" />
+      <TextField id="txtBuscar" fx:id="txtBuscar" layoutX="94.0" layoutY="40.0" prefHeight="25.0" prefWidth="343.0" promptText="Ingrese el nombre del origen" />
+      <Button id="btnBuscar" fx:id="btnBuscar" defaultButton="true" layoutX="466.0" layoutY="40.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar" />
+      <Button id="btnNuevo" fx:id="btnNuevo" defaultButton="true" layoutX="535.0" layoutY="40.0" mnemonicParsing="false" onAction="#Nuevo" text="Nuevo" />
+      <Hyperlink layoutX="773.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
+   </children>
+</AnchorPane>

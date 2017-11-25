@@ -163,4 +163,9 @@ public class Aerolinea {
         }
         return val;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
  }

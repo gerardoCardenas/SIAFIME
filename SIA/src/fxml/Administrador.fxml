@@ -32,5 +32,10 @@
             <Font size="18.0" />
          </font>
       </Hyperlink>
+      <Hyperlink layoutX="244.0" layoutY="224.0" onAction="#verDestino" text="Ver Origen">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
    </children>
 </Pane>

@@ -16,6 +16,7 @@ import lanzadores.AdministradorLaunch;
 import lanzadores.AerolineaListLaunch;
 import lanzadores.EscalaListLaunch;
 import lanzadores.LoginLaunch;
+import lanzadores.OrigenListLaunch;
 import lanzadores.UsuarioListLaunch;
 
 /**
@@ -76,5 +77,13 @@ public class AdministradorController implements Initializable {
     @FXML
     private void verCliente(ActionEvent event) {
         
+    }
+
+    @FXML
+    private void verDestino(ActionEvent event) {
+        OrigenListLaunch oll = new OrigenListLaunch();
+        oll.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
     }
 }

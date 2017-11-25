@@ -154,4 +154,10 @@ public class Ciudad {
         }
         return val;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+    
 }

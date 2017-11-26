@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.PasajeListController">
+   <children>
+      <TableView id="tvPasaje" fx:id="tvPasaje" layoutX="15.0" layoutY="84.0" prefHeight="493.0" prefWidth="828.0">
+        <columns>
+          <TableColumn id="tbIdPasaje" fx:id="tbIdPasaje" prefWidth="64.0" text="Id Pasaje" />
+          <TableColumn id="tbclase" fx:id="tbClase" prefWidth="125.0" text="Clase" />
+            <TableColumn id="tbAsiente" fx:id="tbAsiente" prefWidth="75.0" text="Asiento" />
+            <TableColumn id="tbValor" fx:id="tbValor" prefWidth="123.0" text="Valor" />
+            <TableColumn id="tbIdCliente" fx:id="tbIdCliente" prefWidth="123.0" text="Id Cliente" />
+            <TableColumn id="tbIdVuelo" fx:id="tbIdVuelo" prefWidth="110.0" text="Id Vuelo" />
+        </columns>
+      </TableView>
+      <Hyperlink fx:id="back" layoutX="784.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
+   </children>
+</AnchorPane>

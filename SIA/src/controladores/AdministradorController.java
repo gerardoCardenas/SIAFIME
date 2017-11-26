@@ -86,4 +86,8 @@ public class AdministradorController implements Initializable {
         AdministradorLaunch al = new AdministradorLaunch();
         al.close();
     }
+
+    @FXML
+    private void mostrarUsuario(ActionEvent event) {
+    }
 }

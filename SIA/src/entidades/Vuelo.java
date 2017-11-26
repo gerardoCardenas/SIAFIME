@@ -20,98 +20,86 @@ import java.sql.Date;
  */
 public class Vuelo {
     private int idVuelo;
-    private String capacidad;
-    private String  modeloAvion;
-    private String numeroVuelo;
-    private int idConpañia;
-    private int idEscala;
-    private String lastUpdate;
+    private int capacidad;
     private int idOrigen;
     private int idDestino;
+    private float precioBase;
+    private String  modeloAvion;
+    private int idEscala;
+    private int idAerolinea;
 
     public int getIdVuelo() {
         return idVuelo;
     }
 
-    public void setIdVuelo(int idVuelo) {
-        this.idVuelo = idVuelo;
-    }
-
-    public String getCapacidad() {
+    public int getCapacidad() {
         return capacidad;
-    }
-
-    public void setCapacidad(String capacidad) {
-        this.capacidad = capacidad;
-    }
-
-    public String getModeloAvion() {
-        return modeloAvion;
-    }
-
-    public void setModeloAvion(String modeloAvion) {
-        this.modeloAvion = modeloAvion;
-    }
-
-    public String getNumeroVuelo() {
-        return numeroVuelo;
-    }
-
-    public void setNumeroVuelo(String numeroVuelo) {
-        this.numeroVuelo = numeroVuelo;
-    }
-
-    public int getIdConpañia() {
-        return idConpañia;
-    }
-
-    public void setIdConpañia(int idConpañia) {
-        this.idConpañia = idConpañia;
-    }
-
-    public int getEscala() {
-        return idEscala;
-    }
-
-    public void setEscala(int escala) {
-        this.idEscala = escala;
-    }
-
-    public String getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(String lastUpdate) {
-        this.lastUpdate = lastUpdate;
     }
 
     public int getIdOrigen() {
         return idOrigen;
     }
 
-    public void setIdOrigen(int idOrigen) {
-        this.idOrigen = idOrigen;
-    }
-
     public int getIdDestino() {
         return idDestino;
+    }
+
+    public float getPrecioBase() {
+        return precioBase;
+    }
+
+    public String getModeloAvion() {
+        return modeloAvion;
+    }
+
+    public int getIdEscala() {
+        return idEscala;
+    }
+
+    public int getIdAerolinea() {
+        return idAerolinea;
+    }
+
+    public Vuelo() {
+    }
+
+    public void setIdVuelo(int idVuelo) {
+        this.idVuelo = idVuelo;
+    }
+
+    public void setIdOrigen(int idOrigen) {
+        this.idOrigen = idOrigen;
     }
 
     public void setIdDestino(int idDestino) {
         this.idDestino = idDestino;
     }
-    
 
-    public Vuelo(String capacidad, String modeloAvion, String numeroVuelo, int idConpañia, int idEscala, int idOrigen, int idDestino) {
-        this.capacidad = capacidad;
+    public void setPrecioBase(float precioBase) {
+        this.precioBase = precioBase;
+    }
+
+    public void setModeloAvion(String modeloAvion) {
         this.modeloAvion = modeloAvion;
-        this.numeroVuelo = numeroVuelo;
-        this.idConpañia = idConpañia;
+    }
+
+    public void setIdEscala(int idEscala) {
         this.idEscala = idEscala;
+    }
+
+    public void setIdAerolinea(int idAerolinea) {
+        this.idAerolinea = idAerolinea;
+    }
+
+    public Vuelo(int capacidad, int idOrigen, int idDestino, float precioBase, String modeloAvion, int idEscala, int idAerolinea) {
+        this.capacidad = capacidad;
         this.idOrigen = idOrigen;
         this.idDestino = idDestino;
+        this.precioBase = precioBase;
+        this.modeloAvion = modeloAvion;
+        this.idEscala = idEscala;
+        this.idAerolinea = idAerolinea;
     }
-
-    public Vuelo() {
-    }
+    
+    
 }

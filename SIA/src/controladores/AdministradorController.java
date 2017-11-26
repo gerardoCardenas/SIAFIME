@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;
 import lanzadores.AdministradorLaunch;
 import lanzadores.AerolineaListLaunch;
+import lanzadores.ClienteListLaunch;
 import lanzadores.EscalaListLaunch;
 import lanzadores.LoginLaunch;
 import lanzadores.OrigenListLaunch;
@@ -76,7 +77,11 @@ public class AdministradorController implements Initializable {
 
     @FXML
     private void verCliente(ActionEvent event) {
-        
+        ClienteListLaunch cll = new ClienteListLaunch();
+        cll.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    
     }
 
     @FXML

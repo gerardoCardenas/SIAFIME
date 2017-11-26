@@ -20,6 +20,7 @@ import lanzadores.LoginLaunch;
 import lanzadores.OrigenListLaunch;
 import lanzadores.PasajeListLaunch;
 import lanzadores.UsuarioListLaunch;
+import lanzadores.VueloListLaunch;
 
 /**
  * FXML Controller class
@@ -103,6 +104,14 @@ public class AdministradorController implements Initializable {
     private void VerPasaje(ActionEvent event) {
         PasajeListLaunch pll = new PasajeListLaunch();
         pll.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void VerVuelos(ActionEvent event) {
+        VueloListLaunch vll = new VueloListLaunch();
+        vll.launch();
         AdministradorLaunch al = new AdministradorLaunch();
         al.close();
     }

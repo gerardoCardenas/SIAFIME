@@ -101,10 +101,10 @@ public class OrigenListController implements Initializable {
 
     @FXML
     private void regresar(ActionEvent event) {
-        AdministradorLaunch al = new AdministradorLaunch();
-        al.close();
         OrigenListLaunch oll = new OrigenListLaunch();
-        oll.launch();
+        oll.close();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.launch();
     }
     
     public void setTable(){

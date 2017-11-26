@@ -129,7 +129,7 @@ public class PasajeListController implements Initializable {
             while(r1.next()){
                 Pasaje p = new Pasaje();
                 p.setIdPasaje(r1.getInt("idPasaje"));
-                p.setClase(r1.getString("idClase"));
+                p.setIdClase(r1.getInt("idClase"));
                 p.setAsiento(r1.getString("asiento"));
                 p.setValor(r1.getFloat("precioBase"));
                 p.setIdCliente(r1.getInt("idCliente"));

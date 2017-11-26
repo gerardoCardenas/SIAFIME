@@ -25,13 +25,11 @@ import java.sql.Date;
 public class Pasaje {
     
     private int idPasaje;
-    private String clase;
+    private int idClase;
     private String asiento;
     private float valor;
     private int idCliente;
     private int idVuelo;
-    private String lastUpdate;
-    private String lastUpdateBy;
 
     public int getIdPasaje() {
         return idPasaje;
@@ -41,12 +39,12 @@ public class Pasaje {
         this.idPasaje = idPasaje;
     }
 
-    public String getClase() {
-        return clase;
+    public int getIdClase() {
+        return idClase;
     }
 
-    public void setClase(String clase) {
-        this.clase = clase;
+    public void setIdClase(int idClase) {
+        this.idClase = idClase;
     }
 
     public String getAsiento() {
@@ -81,29 +79,11 @@ public class Pasaje {
         this.idVuelo = idVuelo;
     }
 
-    public String getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(String lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
-
-    public String getLastUpdateBy() {
-        return lastUpdateBy;
-    }
-
-    public void setLastUpdateBy(String lastUpdateBy) {
-        this.lastUpdateBy = lastUpdateBy;
-    }
-    
-    
-
     public Pasaje() {
     }
 
-    public Pasaje(String clase, String asiento, float valor, int idCliente, int idVuelo) {
-        this.clase = clase;
+    public Pasaje(int idClase, String asiento, float valor, int idCliente, int idVuelo) {
+        this.idClase = idClase;
         this.asiento = asiento;
         this.valor = valor;
         this.idCliente = idCliente;

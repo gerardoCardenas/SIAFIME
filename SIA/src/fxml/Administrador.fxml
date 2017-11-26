@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,35 +9,44 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane cacheHint="SCALE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AdministradorController">
+<Pane id="idmFondo" cacheHint="SCALE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="665.0" stylesheets="@estillo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.AdministradorController">
    <children>
-      <Hyperlink layoutX="243.0" layoutY="173.0" onAction="#verUsuarios" text="Ver Usuarios">
+      <Pane id="admCabecera" prefHeight="80.0" prefWidth="665.0" stylesheets="@estillo.css" />
+      <Hyperlink id="admSalir" layoutX="592.0" layoutY="24.0" onAction="#salir" stylesheets="@estillo.css" text="Salir">
          <font>
-            <Font size="18.0" />
-         </font></Hyperlink>
-      <Hyperlink layoutX="554.0" onAction="#salir" text="Salir">
-         <font>
-            <Font size="18.0" />
-         </font></Hyperlink>
-      <Hyperlink id="hlAerolinea" fx:id="hlAerolinea" layoutX="236.0" layoutY="138.0" onAction="#verAerolineas" text="Ver Aerolineas">
-         <font>
-            <Font size="18.0" />
+            <Font name="Liberation Mono" size="18.0" />
          </font>
       </Hyperlink>
-      <Hyperlink id="hlEscala" fx:id="hlEscala" layoutX="253.0" layoutY="103.0" onAction="#verEscala" text="Ver Escala">
+      <ImageView fitHeight="363.0" fitWidth="663.0" layoutY="93.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../imagenes/admfondo.png" />
+         </image>
+      </ImageView>
+      <Hyperlink id="idorigen" layoutX="272.0" layoutY="315.0" onAction="#verDestino" text="Ver Origen">
          <font>
-            <Font size="18.0" />
+            <Font name="Liberation Mono" size="18.0" />
          </font>
       </Hyperlink>
-      <Hyperlink id="hlCliente" fx:id="hlCliente" layoutX="254.0" layoutY="68.0" onAction="#verCliente" text="Ver Cliente">
+      <Hyperlink id="hlCliente" fx:id="hlCliente" layoutX="88.0" layoutY="265.0" onAction="#verCliente" text="Ver Cliente">
          <font>
-            <Font size="18.0" />
+            <Font name="Liberation Mono" size="18.0" />
          </font>
       </Hyperlink>
-      <Hyperlink layoutX="244.0" layoutY="224.0" onAction="#verDestino" text="Ver Origen">
+      <Hyperlink id="hlEscala" fx:id="hlEscala" layoutX="447.0" layoutY="177.0" onAction="#verEscala" text="Ver Escala">
          <font>
-            <Font size="18.0" />
+            <Font name="Liberation Mono" size="18.0" />
          </font>
       </Hyperlink>
+      <Hyperlink id="hlAerolinea" fx:id="hlAerolinea" layoutX="446.0" layoutY="262.0" onAction="#verAerolineas" text="Ver Aerolineas">
+         <font>
+            <Font name="Liberation Mono" size="18.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink id="iduser" layoutX="87.0" layoutY="177.0" onAction="#verUsuarios" text="Ver Usuarios">
+         <font>
+            <Font name="Liberation Mono" size="18.0" />
+         </font>
+      </Hyperlink>
+      <Circle id="circulo" fill="WHITE" layoutX="333.0" layoutY="86.0" radius="33.0" stroke="WHITE" strokeType="INSIDE" />
    </children>
 </Pane>

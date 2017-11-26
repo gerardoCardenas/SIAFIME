@@ -159,6 +159,12 @@ public class Escala {
         }
         return val;
     }
+
+    public Escala(String descripcion, String lastUpdate, String lastUpdateBy) {
+        this.descripcion = descripcion;
+        this.lastUpdate = lastUpdate;
+        this.lastUpdateBy = lastUpdateBy;
+    }
     
     
 }

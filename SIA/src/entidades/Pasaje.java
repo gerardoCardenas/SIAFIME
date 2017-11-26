@@ -5,7 +5,11 @@
  */
 package entidades;
 
+import db.Conexion;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -55,14 +59,6 @@ public class Pasaje {
         this.asiento = asiento;
     }
 
-    public float getValor() {
-        return valor;
-    }
-
-    public void setValor(float valor) {
-        this.valor = valor;
-    }
-
     public int getIdCliente() {
         return idCliente;
     }
@@ -82,12 +78,34 @@ public class Pasaje {
     public Pasaje() {
     }
 
-    public Pasaje(int idClase, String asiento, float valor, int idCliente, int idVuelo) {
+    public Pasaje(int idClase, String asiento, int idCliente, int idVuelo) {
         this.idClase = idClase;
         this.asiento = asiento;
-        this.valor = valor;
         this.idCliente = idCliente;
         this.idVuelo = idVuelo;
+    }
+    
+    public boolean delete(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        query = "DELETE FROM `pasaje` WHERE `pasaje`.`idPasaje` = " + this.idPasaje;
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: Este elemento no se elimino correctamente es posible que informacion de otras tablas dependan de este registro" + e);
+        }
+        return val;
     }
 
 }

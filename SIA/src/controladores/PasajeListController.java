@@ -100,10 +100,10 @@ public class PasajeListController implements Initializable {
     
     @FXML
     private void regresar(ActionEvent event) {
-        AdministradorLaunch al = new AdministradorLaunch();
-        al.close();
         PasajeListLaunch pll = new PasajeListLaunch();
-        pll.launch();
+        pll.close();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.launch();
     }
     
     public void setTable(){

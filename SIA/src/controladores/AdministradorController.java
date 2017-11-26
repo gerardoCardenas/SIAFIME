@@ -18,6 +18,7 @@ import lanzadores.ClienteListLaunch;
 import lanzadores.EscalaListLaunch;
 import lanzadores.LoginLaunch;
 import lanzadores.OrigenListLaunch;
+import lanzadores.PasajeListLaunch;
 import lanzadores.UsuarioListLaunch;
 
 /**
@@ -33,6 +34,8 @@ public class AdministradorController implements Initializable {
     private Hyperlink hlEscala;
     @FXML
     private Hyperlink hlCliente;
+    @FXML
+    private Hyperlink hypasaje;
 
     /**
      * Initializes the controller class.
@@ -94,5 +97,13 @@ public class AdministradorController implements Initializable {
 
     @FXML
     private void mostrarUsuario(ActionEvent event) {
+    }
+
+    @FXML
+    private void VerPasaje(ActionEvent event) {
+        PasajeListLaunch pll = new PasajeListLaunch();
+        pll.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
     }
 }

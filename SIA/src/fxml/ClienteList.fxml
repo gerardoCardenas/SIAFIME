@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.ClienteListController">
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ClienteListController">
    <children>
       <Label layoutX="55.0" layoutY="40.0" text="Cliente:">
          <font>
@@ -20,16 +19,18 @@
       <Button id="btnNuevo" fx:id="btnNuevo" defaultButton="true" layoutX="563.0" layoutY="41.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
       <TableView id="tvCliente" fx:id="tvCliente" layoutX="20.0" layoutY="86.0" prefHeight="487.0" prefWidth="820.0">
         <columns>
-            <TableColumn id="tbClmNCli" fx:id="tbClmNCli" prefWidth="63.0" text="N°Cliente" />
-          <TableColumn id="tbClmNombre" fx:id="tbClmNombre" prefWidth="135.0" text="Nombre" />
-          <TableColumn id="tbClmEdad" fx:id="tbClmEdad" prefWidth="45.0" text="Edad" />
-            <TableColumn id="tbClmTel" fx:id="tbClmTel" prefWidth="67.0" text="Telefono" />
-            <TableColumn id="tbClmDir" fx:id="tbClmDir" prefWidth="181.0" text="Direccion" />
-            <TableColumn id="tbClmEmail" fx:id="tbClmEmail" prefWidth="135.0" text="Email" />
-            <TableColumn id="tbClmLastU" fx:id="tbClmLastU" minWidth="4.0" prefWidth="94.0" text="LastUpdate" />
-            <TableColumn id="tbClmLastUBy" fx:id="tbClmLastUBy" prefWidth="99.0" text="LastUpdateBy" />
+            <TableColumn id="tbClmNCli" fx:id="tbClmNCli" prefWidth="58.0" text="N°Cliente" />
+          <TableColumn id="tbClmNombre" fx:id="tbClmNombre" prefWidth="71.0" text="Nombre" />
+            <TableColumn id="tbClmApellido" fx:id="tbClmApellido" prefWidth="108.0" text="Apellido" />
+          <TableColumn id="tbClmEdad" fx:id="tbClmEdad" prefWidth="46.0" text="Edad" />
+            <TableColumn id="tbClmGenero" fx:id="tbClmGenero" prefWidth="53.0" text="Genero" />
+            <TableColumn id="tbClmTel" fx:id="tbClmTel" prefWidth="73.0" text="Telefono" />
+            <TableColumn id="tbClmDir" fx:id="tbClmDir" prefWidth="146.0" text="Direccion" />
+            <TableColumn id="tbClmEmail" fx:id="tbClmEmail" prefWidth="92.0" text="Email" />
+            <TableColumn id="tbClmLastU" fx:id="tbClmLastU" minWidth="4.0" prefWidth="87.0" text="LastUpdate" />
+            <TableColumn id="tbClmLastUBy" fx:id="tbClmLastUBy" prefWidth="85.0" text="LastUpdateBy" />
         </columns>
       </TableView>
-      <Hyperlink id="back" fx:id="back" layoutX="781.0" layoutY="14.0" text="Regresar" />
+      <Hyperlink id="back" fx:id="back" layoutX="781.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
    </children>
 </AnchorPane>

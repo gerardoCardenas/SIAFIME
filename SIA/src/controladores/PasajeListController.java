@@ -68,7 +68,8 @@ public class PasajeListController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        setTable();
+        rellenarTabla();
     }    
 
     @FXML
@@ -82,7 +83,7 @@ public class PasajeListController implements Initializable {
             public void handle(ActionEvent event) {
                 Pasaje p = new Pasaje();
                 p = tvPasaje.getSelectionModel().getSelectedItem();
-                //p.delete();}
+                p.delete();
             }
         });
         menu.getItems().add(itemEliminar);
@@ -120,7 +121,7 @@ public class PasajeListController implements Initializable {
         data.clear();
         Conexion c1 = new Conexion();
         Connection co = c1.conectar();
-        String query = "SELECT * FROM `origen`";
+        String query = "SELECT * FROM `pasaje`";
         Statement stquery;
         try {
             stquery = co.createStatement();

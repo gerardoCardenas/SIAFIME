@@ -20,3 +20,31 @@
 #pie{
     -fx-background-color: white;
 }
+#admCabecera {
+    -fx-background-color: #000000;
+}
+#admSalir {
+    -fx-background-color: #FFF;
+}
+#circulo{
+    -fx-background-color: #FFF;
+}
+#admFondo {
+    -fx-background-color: #FFF;
+}
+#iduser{
+    -fx-background-color: #FFF;
+}
+#hlCliente{
+    -fx-background-color: #FFF;
+}
+#hlEscala{
+    -fx-background-color: #FFF;
+}
+#hlAerolinea{
+    -fx-background-color: #FFF;
+}
+#idorigen{
+    -fx-background-color: #FFF;
+    -fx-border: 1px solid black;
+}

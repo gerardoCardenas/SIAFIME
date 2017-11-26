@@ -9,16 +9,16 @@
 
 <AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.EscalaListController">
    <children>
-      <TableView layoutX="5.0" layoutY="125.0" prefHeight="458.0" prefWidth="847.0">
+      <TableView fx:id="tabEscala" layoutX="5.0" layoutY="125.0" prefHeight="458.0" prefWidth="847.0">
         <columns>
-          <TableColumn prefWidth="204.0" text="idEscala" />
-          <TableColumn prefWidth="171.0" text="descripcion" />
-            <TableColumn prefWidth="247.0" text="lastUpdate" />
-            <TableColumn prefWidth="224.0" text="lastUpdateBy" />
+          <TableColumn fx:id="tbidEscala" prefWidth="204.0" text="idEscala" />
+          <TableColumn fx:id="tbDescripcion" prefWidth="171.0" text="descripcion" />
+            <TableColumn fx:id="tbLasUpdate" prefWidth="247.0" text="lastUpdate" />
+            <TableColumn fx:id="tbLastUpdateBy" prefWidth="224.0" text="lastUpdateBy" />
         </columns>
       </TableView>
-      <TextField layoutX="66.0" layoutY="68.0" prefHeight="25.0" prefWidth="283.0" />
-      <Button defaultButton="true" layoutX="367.0" layoutY="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Buscar" />
+      <TextField fx:id="txfBuscar" layoutX="66.0" layoutY="68.0" prefHeight="25.0" prefWidth="283.0" />
+      <Button fx:id="btnBuscar" defaultButton="true" layoutX="367.0" layoutY="68.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Buscar" />
       <Label layoutX="66.0" layoutY="40.0" text="Busqueda">
          <font>
             <Font size="15.0" />
@@ -29,6 +29,6 @@
             <Font name="Liberation Mono Bold" size="46.0" />
          </font>
       </Label>
-      <Hyperlink id="btregresar" layoutX="795.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
+      <Hyperlink id="btregresar" fx:id="linkRegresar" layoutX="783.0" layoutY="5.0" onAction="#regresar" text="Regresar" />
    </children>
 </AnchorPane>

@@ -82,5 +82,15 @@
             </Menu>
         </menus>
       </MenuBar>
+      <Hyperlink id="hypasaje" fx:id="hypasaje" layoutX="114.0" layoutY="339.0" onAction="#VerPasaje" text="Ver Pasaje">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="480.0" layoutY="339.0" onAction="#VerVuelos" text="Ver Vuelos">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Hyperlink>
    </children>
 </Pane>

@@ -31,6 +31,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.ContextMenuEvent;
+import lanzadores.AdministradorLaunch;
+import lanzadores.OrigenListLaunch;
 
 /**
  * FXML Controller class
@@ -49,10 +51,6 @@ public class OrigenListController implements Initializable {
     private TableColumn<Origen, String> tbcFMod;
     @FXML
     private TableColumn<Origen, String> tbcModP;
-    @FXML
-    private TextField txtBuscar;
-    @FXML
-    private Button btnBuscar;
     @FXML
     private Button btnNuevo;
 
@@ -84,12 +82,18 @@ public class OrigenListController implements Initializable {
             }
         });
         menu.getItems().add(itemEliminar);
+        itemActualizar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                rellenarTabla();
+            }
+        });
+        menu.getItems().add(itemActualizar);
+                
+        
         tbAerolinea.setContextMenu(menu);
     }
 
-    @FXML
-    private void Buscar(ActionEvent event) {
-    }
 
     @FXML
     private void Nuevo(ActionEvent event) {
@@ -97,6 +101,10 @@ public class OrigenListController implements Initializable {
 
     @FXML
     private void regresar(ActionEvent event) {
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+        OrigenListLaunch oll = new OrigenListLaunch();
+        oll.launch();
     }
     
     public void setTable(){

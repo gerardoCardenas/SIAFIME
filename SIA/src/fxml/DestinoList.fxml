@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.DestinoListController">
+   <children>
+      <Hyperlink id="back" fx:id="back" layoutX="791.0" layoutY="24.0" text="Regresar" />
+      <Button id="btnNuevo" fx:id="btnNuevo" defaultButton="true" layoutX="573.0" layoutY="51.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
+      <Button id="btnBuscar" fx:id="btnBuscar" defaultButton="true" layoutX="512.0" layoutY="51.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
+      <TextField id="txtDestino" fx:id="txtFCliente" layoutX="130.0" layoutY="51.0" prefHeight="25.0" prefWidth="340.0" />
+      <Label id="lblDestino" fx:id="lblDestino" layoutX="53.0" layoutY="50.0" text="Destino:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TableView id="tvDestino" fx:id="tvDestino" layoutX="8.0" layoutY="144.0" prefHeight="448.0" prefWidth="849.0">
+        <columns>
+          <TableColumn id="tcId" fx:id="tcId" prefWidth="75.0" text="Id Destino" />
+          <TableColumn id="cbAerolinea" fx:id="cbAerolinea" prefWidth="222.0" text="Aerolinea" />
+            <TableColumn id="tcCiudad" fx:id="tcCiudad" prefWidth="180.0" text="Ciudad" />
+            <TableColumn id="tcLastUpdate" fx:id="tcLastUpdate" prefWidth="201.0" text="Fecha de modificacion" />
+            <TableColumn id="tcLastUpdateBy" fx:id="tcLastUpdateBy" prefWidth="170.0" text="Modificado por" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -19,6 +19,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -39,8 +40,6 @@ public class EscalaListController implements Initializable {
     @FXML
     private TableColumn<Escala, Integer> tbidEscala;
     @FXML
-    private TableColumn<Escala, String> tbDescipcion;
-    @FXML
     private TableColumn<Escala, String> tbLasUpdate;
     @FXML
     private TableColumn<Escala, String> tbLastUpdateBy;
@@ -51,6 +50,10 @@ public class EscalaListController implements Initializable {
     @FXML
     private Button btnNuevo;
     public ObservableList<Escala> data = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<Escala, String> tbDescripcion;
+    @FXML
+    private Hyperlink linkRegresar;
 
     /**
      * Initializes the controller class.
@@ -62,7 +65,6 @@ public class EscalaListController implements Initializable {
         rellenarTabla();
     }
     
-    @FXML
     private void Buscar (ActionEvent event){
         data.clear();
         Conexion c1 =new Conexion();
@@ -98,7 +100,7 @@ public class EscalaListController implements Initializable {
     //inicializo la tabla para poder llenarla
     private void setTable(){
         tbidEscala.setCellValueFactory(new PropertyValueFactory<>("idescala"));
-        tbDescipcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
+        tbDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
         tbLasUpdate.setCellValueFactory(new PropertyValueFactory<>("lastUpdate"));
         tbLastUpdateBy.setCellValueFactory(new PropertyValueFactory<>("lastUpdateBy"));
         tabEscala.setItems(data);

@@ -35,6 +35,7 @@ public class ClienteListLaunch {
             stage.setResizable(false);
             Sesion s1 = new Sesion();
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error");
         }
     }
     public void close(){

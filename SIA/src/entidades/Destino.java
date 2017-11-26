@@ -5,6 +5,13 @@
  */
 package entidades;
 
+import db.Conexion;
+import db.Sesion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import javax.swing.JOptionPane;
+import sia.Fechas;
+
 
 /**
  *09/11/2017
@@ -18,8 +25,7 @@ package entidades;
  */
 public class Destino {
     private int idDestino;
-    private String nAerolineas;
-    private String ciudad;
+    private int idAerolinea;
     private int idCiudad;
     private String lastUpdate;
     private String lastUpdateBy;
@@ -31,30 +37,6 @@ public class Destino {
 
     public void setIdDestino(int idDestino) {
         this.idDestino = idDestino;
-    }
-
-    public String getnAerolineas() {
-        return nAerolineas;
-    }
-
-    public void setnAerolineas(String nAerolineas) {
-        this.nAerolineas = nAerolineas;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public int getIdCiudad() {
-        return idCiudad;
-    }
-
-    public void setIdCiudad(int idCiudad) {
-        this.idCiudad = idCiudad;
     }
 
     public String getLastUpdate() {
@@ -73,14 +55,101 @@ public class Destino {
         this.lastUpdateBy = lastUpdateBy;
     }
 
+    public int getIdAerolinea() {
+        return idAerolinea;
+    }
+
+    public void setIdAerolinea(int idAerolinea) {
+        this.idAerolinea = idAerolinea;
+    }
+
+    public int getIdCiudad() {
+        return idCiudad;
+    }
+
+    public void setIdCiudad(int idCiudad) {
+        this.idCiudad = idCiudad;
+    }
+
+
     public Destino() {
     }
 
-    public Destino(String nAerolineas, String ciudad, int idCiudad) {
-        this.nAerolineas = nAerolineas;
-        this.ciudad = ciudad;
+    public Destino(int idAerolinea, int idCiudad, String lastUpdate, String lastUpdateBy) {
+        this.idAerolinea = idAerolinea;
         this.idCiudad = idCiudad;
+        this.lastUpdate = lastUpdate;
+        this.lastUpdateBy = lastUpdateBy;
+    }
+    public boolean insert(){
+        Conexion c1 = new Conexion();
+        Connection co = c1.conectar();
+        Fechas f = new Fechas();
+        Sesion s1 = new Sesion();
+        String query = "INSERT INTO `destino`(`idAerolinea`, `idCiudad`, `lastUpdate`, `lastUpdateBy`) VALUES (" + this.idAerolinea+ "," + this.idCiudad + ", '" + f.obtenerFecha()+"'" + ",'" + s1.obtenerUsuario()+"');"; 
+        boolean val = false;
+        System.out.println(query);
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
     }
     
-    
+    public boolean update(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        Fechas f = new Fechas();
+        Sesion s = new Sesion();
+        query = "UPDATE `destino` SET `idAerolinea`= " + this.idAerolinea + ", `idCiudad` = " + this.idCiudad + ", `lastUpdate`= '" + f.obtenerFecha()+"', `lastUpdateBy`='" + s.obtenerUsuario()+"' WHERE `idDestino` = "+ this.idDestino+";";
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
+    }
+    public boolean delete(){
+        Conexion cm = new Conexion();
+        Connection co = cm.conectar();
+        String query;
+        query = "DELETE FROM `destino` WHERE `idDestino` =" + this.idDestino;
+        boolean val = false;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            int rowsA = ps.executeUpdate();
+            if(rowsA != 0 )
+            {
+                val = true;
+            }
+            else
+            {
+                val = false;
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        return val;
+    }
 }

@@ -49,7 +49,7 @@ public class EscalaListController implements Initializable {
     @FXML
     private Button btnBuscar;
     @FXML
-   
+    private Button btnNuevo;
     public ObservableList<Escala> data = FXCollections.observableArrayList();
 
     /**
@@ -63,7 +63,7 @@ public class EscalaListController implements Initializable {
     }
     
     @FXML
-    private void buscar (ActionEvent event){
+    private void Buscar (ActionEvent event){
         data.clear();
         Conexion c1 =new Conexion();
         Connection co = c1.conectar();

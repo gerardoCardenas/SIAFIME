@@ -23,6 +23,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -47,21 +48,15 @@ public class PasajeListController implements Initializable {
     @FXML
     private TableColumn<Pasaje, String> tbAsiente;
     @FXML
-    private TableColumn<Pasaje, Float> tbValor;
-    @FXML
     private TableColumn<Pasaje, Integer> tbIdCliente;
     @FXML
     private TableColumn<Pasaje, Integer> tbIdVuelo;
-    @FXML
-    private TableColumn<Pasaje, String> tbLastU;
-    @FXML
-    private TableColumn<Pasaje, String> tbLastB;
-    @FXML
-    
     public ObservableList<Pasaje> data = FXCollections.observableArrayList();
     
     @FXML
     private TableView<Pasaje> tvPasaje;
+    @FXML
+    private Hyperlink back;
 
     /**
      * Initializes the controller class.
@@ -72,7 +67,6 @@ public class PasajeListController implements Initializable {
         rellenarTabla();
     }    
 
-    @FXML
     private void opciones(ContextMenuEvent event) {
         ContextMenu menu = new ContextMenu();
         MenuItem itemEditar =new MenuItem("Editar");
@@ -111,7 +105,6 @@ public class PasajeListController implements Initializable {
         tbIdPasaje.setCellValueFactory(new PropertyValueFactory<>("idPasaje"));
         tbClase.setCellValueFactory(new PropertyValueFactory<>("idClase"));
         tbAsiente.setCellValueFactory(new PropertyValueFactory<>("asiento"));
-        tbValor.setCellValueFactory(new PropertyValueFactory<>("precioBase"));
         tbIdCliente.setCellValueFactory(new PropertyValueFactory<>("idCliente"));
         tbIdVuelo.setCellValueFactory(new PropertyValueFactory<>("idVuelo"));
         tvPasaje.setItems(data);
@@ -132,7 +125,6 @@ public class PasajeListController implements Initializable {
                 p.setIdPasaje(r1.getInt("idPasaje"));
                 p.setIdClase(r1.getInt("idClase"));
                 p.setAsiento(r1.getString("asiento"));
-                p.setValor(r1.getFloat("precioBase"));
                 p.setIdCliente(r1.getInt("idCliente"));
                 p.setIdVuelo(r1.getInt("idVuelo"));
                 data.add(p);

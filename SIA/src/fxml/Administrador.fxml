@@ -48,5 +48,39 @@
          </font>
       </Hyperlink>
       <Circle id="circulo" fill="WHITE" layoutX="333.0" layoutY="86.0" radius="33.0" stroke="WHITE" strokeType="INSIDE" />
+      <MenuBar layoutX="2.0" layoutY="94.0" prefHeight="32.0" prefWidth="663.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Usuario">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#mostrarUsuario" text="Ver Usuarios" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Cliente">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Ver Clientes" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Aerolineas">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Ver Aerolineas" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Escala">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Ver Escalas " />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Origen">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Ver Origenes" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Clase">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Ver Clase" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
    </children>
 </Pane>

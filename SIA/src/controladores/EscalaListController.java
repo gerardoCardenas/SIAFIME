@@ -80,30 +80,6 @@ public class EscalaListController implements Initializable {
         ell.close();
     }
     
-    private void Buscar (ActionEvent event){
-        data.clear();
-        Conexion c1 =new Conexion();
-        Connection co = c1.conectar();
-        String descrip;
-        descrip = txfBuscar.getText();
-        String query = "SELECT * FROM `escala` WHERE descripcion = '"+descrip+"'";
-        Statement stquery;
-        try {
-            stquery = co.createStatement();
-            PreparedStatement ps1 = co.prepareStatement(query);
-            ResultSet r1 = stquery.executeQuery(query);
-            while(r1.next()){
-                Escala e1 = new Escala(r1.getString("descripcion"));
-                e1.setIdEscala(r1.getInt("idescala"));
-                e1.setLastUpdate(r1.getString("lastUpdate"));
-                e1.setLastUpdateBy(r1.getString("lastUpdateBy"));
-                data.add(e1);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error en relleno de datos: " + e);
-        }
-    }
-
     @FXML
     private void regresar(ActionEvent event) {
         AdministradorLaunch al1 = new AdministradorLaunch();
@@ -114,7 +90,7 @@ public class EscalaListController implements Initializable {
     
     //inicializo la tabla para poder llenarla
     private void setTable(){
-        tbidEscala.setCellValueFactory(new PropertyValueFactory<>("idescala"));
+        tbidEscala.setCellValueFactory(new PropertyValueFactory<>("idEscala"));
         tbDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
         tbLasUpdate.setCellValueFactory(new PropertyValueFactory<>("lastUpdate"));
         tbLastUpdateBy.setCellValueFactory(new PropertyValueFactory<>("lastUpdateBy"));
@@ -132,7 +108,7 @@ public class EscalaListController implements Initializable {
             ResultSet r1 = stquery.executeQuery(query);
             while(r1.next()){
                 Escala u1 = new Escala(r1.getString("descripcion"),r1.getString("lastUpdate"),r1.getString("lastUpdateBy"));
-                u1.setIdEscala(r1.getInt("idescala"));
+                u1.setIdEscala(r1.getInt("idEscala"));
                 u1.setLastUpdate(r1.getString("lastUpdate"));
                 u1.setLastUpdateBy(r1.getString("lastUpdateBy"));                
                 data.add(u1);
@@ -143,7 +119,6 @@ public class EscalaListController implements Initializable {
     }
     
      //Hacer la opcion para editar o eliminar Algun registro
-    @FXML
     private void opcionesUsuario(ContextMenuEvent event) {
         ContextMenu menu = new ContextMenu();
         MenuItem itemEditar =new MenuItem("Editar");
@@ -183,5 +158,30 @@ public class EscalaListController implements Initializable {
         });
         menu.getItems().add(itemActualizar);
         tabEscala.setContextMenu(menu);
+    }
+
+    @FXML
+    private void buscar(ActionEvent event) {
+    data.clear();
+        Conexion c1 = new Conexion();
+        Connection co = c1.conectar();
+        String user;
+        user = txfBuscar.getText();
+        String query = "SELECT * FROM `escala` WHERE descripcion = '"+user+"'";
+        Statement stquery;
+        try {
+            stquery = co.createStatement();
+            PreparedStatement ps1 = co.prepareStatement(query);
+            ResultSet r1 = stquery.executeQuery(query);
+            while(r1.next()){
+                Escala e1 = new Escala(r1.getString("descripcion"),r1.getString("lastUpdate"), r1.getString("lastUpdateBy"));
+                e1.setIdEscala(r1.getInt("idEscala"));
+                e1.setLastUpdate(r1.getString("lastUpdate"));
+                e1.setLastUpdateBy(r1.getString("lastUpdateBy"));
+                data.add(e1);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error en relleno de datos: " + e);
+        }
     }
 }

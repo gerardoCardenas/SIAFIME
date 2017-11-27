@@ -18,7 +18,7 @@
             <TableColumn id="tbcPre" fx:id="tbcPre" prefWidth="75.0" text="Precio Base" />
             <TableColumn id="tbcMod" fx:id="tbcMod" prefWidth="137.0" text="Modelo Avion" />
             <TableColumn id="tbcIdEsc" fx:id="tbcIdEsc" prefWidth="147.0" text="Id Escala" />
-            <TableColumn prefWidth="189.0" text="Id Aerolinea" />
+            <TableColumn id="tbcAerolineas" fx:id="tbcAerolineas" prefWidth="189.0" text="Id Aerolinea" />
             <TableColumn id="tbcAero" fx:id="tbcAero" prefWidth="300.0" text="Destino" />
         </columns>
       </TableView>

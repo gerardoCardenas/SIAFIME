@@ -108,4 +108,8 @@ public class Pasaje {
         return val;
     }
 
+    public Pasaje(String asiento) {
+        this.asiento = asiento;
+    }
+    
 }

@@ -57,27 +57,27 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Cliente">
             <items>
-              <MenuItem mnemonicParsing="false" text="Ver Clientes" />
+              <MenuItem mnemonicParsing="false" onAction="#MostrarCliente" text="Ver Clientes" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Aerolineas">
               <items>
-                <MenuItem mnemonicParsing="false" text="Ver Aerolineas" />
+                <MenuItem mnemonicParsing="false" onAction="#MostrarAerolineas" text="Ver Aerolineas" />
               </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Escala">
             <items>
-              <MenuItem mnemonicParsing="false" text="Ver Escalas " />
+              <MenuItem mnemonicParsing="false" onAction="#MostrarEscala" text="Ver Escalas " />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Origen">
               <items>
-                <MenuItem mnemonicParsing="false" text="Ver Origenes" />
+                <MenuItem mnemonicParsing="false" onAction="#MostrarOrigen" text="Ver Origenes" />
               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Clase">
               <items>
-                <MenuItem mnemonicParsing="false" text="Ver Clase" />
+                <MenuItem mnemonicParsing="false" onAction="#MostrarClase" text="Ver Clase" />
               </items>
             </Menu>
         </menus>

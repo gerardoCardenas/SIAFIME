@@ -32,6 +32,7 @@ import javafx.scene.input.ContextMenuEvent;
 import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
 import lanzadores.EscalaListLaunch;
+import lanzadores.RegistrarEscalaLaunch;
 
 /**
  * FXML Controller class
@@ -68,6 +69,15 @@ public class EscalaListController implements Initializable {
         // TODO
         setTable();
         rellenarTabla();
+    }
+    
+    @FXML
+    private void nuevo(ActionEvent event) {
+        EscalaFecade.setEstado("Agregar");
+        RegistrarEscalaLaunch rel = new RegistrarEscalaLaunch();
+        rel.launch();
+        EscalaListLaunch ell = new EscalaListLaunch();
+        ell.close();
     }
     
     private void Buscar (ActionEvent event){
@@ -145,10 +155,10 @@ public class EscalaListController implements Initializable {
                 Escala escala = tabEscala.getSelectionModel().getSelectedItem();
                 EscalaFecade.setUsuario(escala);
                 EscalaFecade.setEstado("Editar");
-                /*RegistrarEscalaLaunch rul3 = new RegistrarEscalaLaunch();
-                rul3.launch();
-                UsuarioListLaunch ull = new UsuarioListLaunch();
-                ull.close();*/
+                RegistrarEscalaLaunch rel3 = new RegistrarEscalaLaunch();
+                rel3.launch();
+                EscalaListLaunch ell = new EscalaListLaunch();
+                ell.close();
                 
             }
         });

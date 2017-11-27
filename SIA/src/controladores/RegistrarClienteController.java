@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -50,6 +51,8 @@ public class RegistrarClienteController implements Initializable {
     private ToggleGroup Gen;
     @FXML
     private RadioButton rbtnM;
+    @FXML
+    private Label lvlEnc;
 
     /**
      * Initializes the controller class.
@@ -59,6 +62,7 @@ public class RegistrarClienteController implements Initializable {
         Cliente c = new Cliente();
         if(ClienteFacade.getEstado().equals("Registrar")){
             btnRegistrar.setText("Registrar");
+            lvlEnc.setText("Registrarse como Cliente");
             txfNombre.setText("");
             txfApellidos.setText("");
             txfEdad.setText("");
@@ -66,6 +70,20 @@ public class RegistrarClienteController implements Initializable {
             txfTelefono.setText("");
             txfDireccion.setText("");
             txfCorreo.setText("");
+        }else{
+            btnRegistrar.setText("Editar");
+            lvlEnc.setText("Editar Cliente");
+            txfNombre.setText(ClienteFacade.getCliente().getNombre());
+            txfApellidos.setText(ClienteFacade.getCliente().getApellido());
+            txfEdad.setText(ClienteFacade.getCliente().getEdad()+"");
+            if(ClienteFacade.getCliente().getGenero() == "F"){
+                rbtnF.setSelected(true);
+            }else{
+                rbtnM.setSelected(true);
+            }
+            txfTelefono.setText(ClienteFacade.getCliente().getTelefono());
+            txfDireccion.setText(ClienteFacade.getCliente().getDireccion());
+            txfCorreo.setText(ClienteFacade.getCliente().getEmail());
         }
     }    
 
@@ -91,14 +109,23 @@ public class RegistrarClienteController implements Initializable {
         c.setTelefono(txfTelefono.getText());
         c.setDireccion(txfDireccion.getText());
         c.setEmail(txfCorreo.getText());
-        try{
-            c.insert();
+        if(btnRegistrar.getText().equals("Agregar")){  
+            try{
+                c.insert();
+                ClienteListLaunch cll = new ClienteListLaunch();
+                cll.launch();
+                RegistrarClienteLaunch rcl = new RegistrarClienteLaunch();
+                rcl.close();
+            }catch (Exception e){
+                JOptionPane.showMessageDialog(null, "Error en el llenado de datos");
+            }
+        }else{
+            c.setIdCliente(ClienteFacade.getCliente().getIdCliente());
+            c.update();
             ClienteListLaunch cll = new ClienteListLaunch();
             cll.launch();
             RegistrarClienteLaunch rcl = new RegistrarClienteLaunch();
             rcl.close();
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "Error en el llenado de datos");
         }
     }
 }

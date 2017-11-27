@@ -31,6 +31,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.ContextMenuEvent;
+import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
 import lanzadores.OrigenListLaunch;
 
@@ -51,12 +52,14 @@ public class OrigenListController implements Initializable {
     private TableColumn<Origen, String> tbcFMod;
     @FXML
     private TableColumn<Origen, String> tbcModP;
-    @FXML
-    private Button btnNuevo;
 
     public ObservableList<Origen> data = FXCollections.observableArrayList();
     @FXML
     private TableColumn<Origen, Integer> tbcIdOrigen;
+    @FXML
+    private TextField txfBusc;
+    @FXML
+    private Button btnButton;
     
     /**
      * Initializes the controller class.
@@ -95,9 +98,6 @@ public class OrigenListController implements Initializable {
     }
 
 
-    @FXML
-    private void Nuevo(ActionEvent event) {
-    }
 
     @FXML
     private void regresar(ActionEvent event) {
@@ -136,6 +136,31 @@ public class OrigenListController implements Initializable {
             }
         } catch (Exception e) {
       
+        }
     }
+    
+    @FXML
+    private void Buscar (ActionEvent event){
+        data.clear();
+        Conexion c1 =new Conexion();
+        Connection co = c1.conectar();
+        String descrip;
+        descrip = txfBusc.getText();
+        String query = "SELECT * FROM `origen` WHERE idAerolinea = '"+descrip+"'";
+        Statement stquery;
+        try {
+            stquery = co.createStatement();
+            PreparedStatement ps1 = co.prepareStatement(query);
+            ResultSet r1 = stquery.executeQuery(query);
+            while(r1.next()){
+                Origen o1 = new Origen(r1.getInt("idAerolinea"));
+                o1.setAerolinea(r1.getInt("idCiudad"));
+                o1.setLastUpdate(r1.getString("lastUpdate"));
+                o1.setLastUpdateBy(r1.getString("lastUpdateBy"));
+                data.add(o1);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error en relleno de datos: " + e);
+        }
     }
 }

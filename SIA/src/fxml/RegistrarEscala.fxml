@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="229.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.RegistrarEscalaController">
+   <children>
+      <Label id="lblEnc" fx:id="lblEnc" layoutX="163.0" layoutY="28.0" text="Registrar nueva Escala">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TextField id="txfNEsc" fx:id="txfNEsc" layoutX="226.0" layoutY="79.0" />
+      <Button fx:id="btnGuardar" layoutX="274.0" layoutY="115.0" mnemonicParsing="false" text="Guardar" />
+   </children>
+</AnchorPane>

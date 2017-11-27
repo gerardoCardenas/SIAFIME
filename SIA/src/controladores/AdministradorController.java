@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Hyperlink;
 import lanzadores.AdministradorLaunch;
 import lanzadores.AerolineaListLaunch;
+import lanzadores.ClaseListLaunch;
 import lanzadores.ClienteListLaunch;
 import lanzadores.EscalaListLaunch;
 import lanzadores.LoginLaunch;
@@ -98,6 +99,10 @@ public class AdministradorController implements Initializable {
 
     @FXML
     private void mostrarUsuario(ActionEvent event) {
+        UsuarioListLaunch ull = new UsuarioListLaunch();
+        ull.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
     }
 
     @FXML
@@ -112,6 +117,46 @@ public class AdministradorController implements Initializable {
     private void VerVuelos(ActionEvent event) {
         VueloListLaunch vll = new VueloListLaunch();
         vll.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void MostrarCliente(ActionEvent event) {
+        ClienteListLaunch cll = new ClienteListLaunch();
+        cll.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void MostrarAerolineas(ActionEvent event) {
+        AerolineaListLaunch all = new AerolineaListLaunch();
+        all.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void MostrarEscala(ActionEvent event) {
+        EscalaListLaunch ell = new EscalaListLaunch();
+        ell.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void MostrarOrigen(ActionEvent event) {
+        OrigenListLaunch oll = new OrigenListLaunch();
+        oll.launch();
+        AdministradorLaunch al = new AdministradorLaunch();
+        al.close();
+    }
+
+    @FXML
+    private void MostrarClase(ActionEvent event) {
+        ClaseListLaunch cll = new ClaseListLaunch();
+        cll.launch();
         AdministradorLaunch al = new AdministradorLaunch();
         al.close();
     }

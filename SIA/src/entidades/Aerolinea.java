@@ -145,7 +145,7 @@ public class Aerolinea {
         Conexion cm = new Conexion();
         Connection co = cm.conectar();
         String query;
-        query = "DELETE FROM `aerolineas` WHERE `aerolineas`.`idAerolineas` = " + this.idAerolinea;
+        query = "DELETE FROM `aerolineas` WHERE `aerolineas`.`idaerolineas` = " + this.idAerolinea;
         boolean val = false;
         try {
             PreparedStatement ps = co.prepareStatement(query);

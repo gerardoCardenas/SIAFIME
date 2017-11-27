@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.RegistrarClienteVueloController">
+   <children>
+      <Label layoutX="51.0" layoutY="229.0" text="Nombre" />
+      <Label layoutX="380.0" layoutY="229.0" text="Apellidos" />
+      <Label layoutX="71.0" layoutY="285.0" text="Edad" />
+      <Label layoutX="42.0" layoutY="341.0" text="Direccion" />
+      <Label layoutX="60.0" layoutY="394.0" text="Correo" />
+      <Label layoutX="412.0" layoutY="284.0" text="Telefono" />
+      <TextField id="txtFNombre" fx:id="txfNombre" layoutX="127.0" layoutY="224.0" />
+      <TextField id="txfApellidos" fx:id="txfApellidos" layoutX="463.0" layoutY="224.0" prefHeight="25.0" prefWidth="171.0" />
+      <TextField id="txfEdad" fx:id="txfEdad" layoutX="127.0" layoutY="280.0" prefHeight="25.0" prefWidth="74.0" />
+      <TextField id="txfDireccion" fx:id="txfDireccion" layoutX="127.0" layoutY="336.0" prefHeight="25.0" prefWidth="362.0" />
+      <TextField id="txfCorreo" fx:id="txfCorreo" layoutX="127.0" layoutY="389.0" prefHeight="25.0" prefWidth="362.0" />
+      <TextField id="txfTelefono" fx:id="txfTelefono" layoutX="484.0" layoutY="279.0" prefHeight="25.0" prefWidth="149.0" />
+      <Button id="btnRegistrar" fx:id="btnRegistrar" layoutX="536.0" layoutY="361.0" mnemonicParsing="false" onAction="#guardar" prefHeight="36.0" prefWidth="100.0" text="Registrar" />
+      <Label layoutX="276.0" layoutY="27.0" text="S.I.A.">
+         <font>
+            <Font name="Liberation Mono Bold Italic" size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="213.0" layoutY="145.0" text="Registrarse como Cliente ">
+         <font>
+            <Font name="Liberation Mono" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="202.0" fitWidth="161.0" layoutX="52.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/user.png" />
+         </image>
+      </ImageView>
+      <Hyperlink id="back" fx:id="back" layoutX="663.0" layoutY="3.0" onAction="#salir" text="Salir">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Hyperlink>
+      <Label layoutX="253.0" layoutY="285.0" text="Genero" />
+      <RadioButton id="rbtnF" fx:id="rbtnF" layoutX="306.0" layoutY="286.0" mnemonicParsing="false" selected="true" text="F">
+         <toggleGroup>
+            <ToggleGroup fx:id="Gen" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton id="rbtnM" fx:id="rbtnM" layoutX="341.0" layoutY="286.0" mnemonicParsing="false" text="M" toggleGroup="$Gen" />
+   </children>
+</AnchorPane>

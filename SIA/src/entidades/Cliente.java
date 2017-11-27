@@ -236,5 +236,27 @@ public class Cliente {
         }
         return val;
     }
-   
+   public int registrarClienteVuelo(){
+       Conexion c1 = new Conexion();
+        Connection co = c1.conectar();
+        Fechas f = new Fechas();
+        Sesion s1 = new Sesion();
+        int rowsA = 0;
+        String query = "INSERT INTO `cliente`(`nombre`,`apellido`, `edad`,`genero`, `telefono`, `direccion`"
+                + ", `email`, `lastUpdate`, `lastUpdateBy`) VALUES ('"+ nombre +"','"+ apellido +"', '" + edad +"','" + genero +"', '" 
+                + telefono +"', '" + direccion +"', '" + email +"', '" + f.obtenerFecha() +"', '" + s1.obtenerUsuario() +"')" ;
+        try {
+            PreparedStatement ps = co.prepareStatement(query);
+            rowsA = ps.executeUpdate();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error: " + e);
+        }
+        finally{
+            try {
+                co.close();
+            } catch (Exception e) {
+            }
+        }
+        return rowsA;
+   }
 }

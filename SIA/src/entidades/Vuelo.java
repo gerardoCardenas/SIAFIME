@@ -100,6 +100,8 @@ public class Vuelo {
         this.idEscala = idEscala;
         this.idAerolinea = idAerolinea;
     }
-    
-    
+
+    public void setCapacidad(int capacidad) {
+        this.capacidad = capacidad;
+    }
 }

@@ -185,7 +185,7 @@ public class Cliente {
         String query;
         Fechas f = new Fechas();
         Sesion s = new Sesion();
-        query = "UPDATE `cliente` SET `nombre`='" + this.nombre +"',`nombre`='" + this.apellido +"',`edad`='" + this.edad + "',`genero`='" + this.genero + "',"
+        query = "UPDATE `cliente` SET `nombre`='" + this.nombre +"',`apellido`='" + this.apellido +"',`edad`='" + this.edad + "',`genero`='" + this.genero + "',"
                 + "`telefono`='" + this.telefono + "'"
                 + ",`direccion`='" + this.direccion + "',`email`='" + this.email + "',"
                 + "`lastUpdate`='" + f.obtenerFecha() + "',`lastUpdateBy`='" + s.obtenerUsuario() + "'"

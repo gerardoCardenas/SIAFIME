@@ -30,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.ContextMenuEvent;
+import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
 import lanzadores.PasajeListLaunch;
 
@@ -57,6 +58,10 @@ public class PasajeListController implements Initializable {
     private TableView<Pasaje> tvPasaje;
     @FXML
     private Hyperlink back;
+    @FXML
+    private TextField txfBusc;
+    @FXML
+    private Button btnBusc;
 
     /**
      * Initializes the controller class.
@@ -91,6 +96,32 @@ public class PasajeListController implements Initializable {
                 
         
         tvPasaje.setContextMenu(menu);
+    }
+    
+    @FXML
+    private void Buscar (ActionEvent event){
+        data.clear();
+        Conexion c1 =new Conexion();
+        Connection co = c1.conectar();
+        String descrip;
+        descrip = txfBusc.getText();
+        String query = "SELECT * FROM `pasaje` WHERE asiento = '"+descrip+"'";
+        Statement stquery;
+        try {
+            stquery = co.createStatement();
+            PreparedStatement ps1 = co.prepareStatement(query);
+            ResultSet r1 = stquery.executeQuery(query);
+            while(r1.next()){
+                Pasaje p = new Pasaje(r1.getString("asiento"));
+                p.setIdPasaje(r1.getInt("idPasaje"));
+                p.setIdClase(r1.getInt("idClase"));
+                p.setIdCliente(r1.getInt("idCliente"));
+                p.setIdVuelo(r1.getInt("idVuelo"));
+                data.add(p);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Error en relleno de datos: " + e);
+        }
     }
     
     @FXML

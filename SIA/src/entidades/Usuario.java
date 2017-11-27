@@ -105,7 +105,7 @@ public class Usuario {
             if(!datos.getUsuario().equals(usuario) || !(datos.getContraseña().equals(contraseña))){
                 throw new Exception("Usuario Invalido");
             }
-            if(datos.getTipoUsuario().equals("Cliete")){
+            if(datos.getTipoUsuario().equals("Cliente")){
                 throw new Exception("No tiene los permisos para este sistema por favor entre a la pagina web de sia");
             }
             else{

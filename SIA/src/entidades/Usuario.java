@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
+import lanzadores.EmpleadoLaunch;
 import lanzadores.LoginLaunch;
 import sia.Fechas;
 
@@ -102,20 +103,33 @@ public class Usuario {
             datos.setIdUsuario(r1.getInt("idUsuario"));
             
             if(!datos.getUsuario().equals(usuario) || !(datos.getContraseña().equals(contraseña))){
-                throw new Exception();
+                throw new Exception("Usuario Invalido");
+            }
+            if(datos.getTipoUsuario().equals("Cliete")){
+                throw new Exception("No tiene los permisos para este sistema por favor entre a la pagina web de sia");
             }
             else{
+                if(datos.getTipoUsuario().equals("Administrador")){
                 AdministradorLaunch al1 = new AdministradorLaunch();
                 al1.launch();
                 LoginLaunch l1 = new LoginLaunch();
                 l1.close();
+                }
+                else{
+                    if(datos.getTipoUsuario().equals("Empleado")){
+                    EmpleadoLaunch el = new EmpleadoLaunch();
+                    el.launch();
+                    LoginLaunch l1 = new LoginLaunch();
+                    l1.close();
+                    }
+                }
                 Sesion s1 = new Sesion();
                 s1.persistir(datos);
                 JOptionPane.showMessageDialog(null, "Bienvenido " + s1.obtenerUsuario());
             }
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Usuario o Contraseña invalidos");
+            JOptionPane.showMessageDialog(null, e);
         }
         finally{//Se cierra la conexion
             try {

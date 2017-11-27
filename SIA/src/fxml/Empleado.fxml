@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.EmpleadoController">
+   <children>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Vuelos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#verVuelos" text="Ver vuelos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Promociones">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#verPromociones" text="Ver Promociones" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Cliente">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#registrarCliente" text="Registrar" />
+                  <MenuItem mnemonicParsing="false" onAction="#verClientes" text="Buscar Cliente" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

@@ -23,4 +23,8 @@ public class Sesion {
     public String obtenerUsuario(){
         return usuario.getUsuario();
     }
+    
+    public static Usuario obtenerObjetoUsuario(){
+        return usuario;
+    }
 }

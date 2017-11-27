@@ -49,7 +49,7 @@ public class VuelosController implements Initializable {
     @FXML
     private TableColumn<Vuelo, Integer> tbcIdEsc;
     @FXML
-    private TableColumn<Vuelo, Integer> tbcAero;
+    private TableColumn<Vuelo, Integer> tbcAerolineas;
     @FXML
     private TextField txfBuscar;
     @FXML
@@ -108,7 +108,7 @@ public class VuelosController implements Initializable {
         tbcPre.setCellValueFactory(new PropertyValueFactory<>("precioBase"));
         tbcMod.setCellValueFactory(new PropertyValueFactory<>("modeloAvion"));
         tbcIdEsc.setCellValueFactory(new PropertyValueFactory<>("idEscala"));
-        tbcAero.setCellValueFactory(new PropertyValueFactory<>("idAerolinea"));
+        tbcAerolineas.setCellValueFactory(new PropertyValueFactory<>("idAerolinea"));
         tvVuelo.setItems(data);
     }
     

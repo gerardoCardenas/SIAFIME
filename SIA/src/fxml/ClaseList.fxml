@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controladores.ClaseListController">
+   <children>
+      <TableView id="tvClase" fx:id="tvClase" layoutX="14.0" layoutY="69.0" prefHeight="315.0" prefWidth="573.0">
+        <columns>
+          <TableColumn id="tbcIdClase" fx:id="tbcIdClase" prefWidth="75.0" text="Id Clase" />
+          <TableColumn id="tbcDesc" fx:id="tbcDesc" prefWidth="399.0" text="Descripcion" />
+            <TableColumn id="tbcAum" fx:id="tbcAum" minWidth="0.0" prefWidth="98.0" text="Aumento" />
+        </columns>
+      </TableView>
+      <Hyperlink layoutX="528.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
+      <TextField id="txfBus" fx:id="txfBus" layoutX="64.0" layoutY="25.0" />
+      <Label layoutX="26.0" layoutY="29.0" text="Buscar" />
+      <Button id="btnBuscar" fx:id="btnBuscar" defaultButton="true" layoutX="224.0" layoutY="25.0" mnemonicParsing="false" text="Buscar" />
+   </children>
+</AnchorPane>

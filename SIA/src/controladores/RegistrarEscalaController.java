@@ -44,7 +44,7 @@ public class RegistrarEscalaController implements Initializable {
        Escala e = new Escala();
        if(EscalaFecade.getEstado().equals("Agregar")){
             btnGuardar.setText("Agregar");
-            lblEnc.setText("Agregar un usuario");
+            lblEnc.setText("Agregar Escala");
             txfNEsc.setText("");
         }
         else{
@@ -54,7 +54,6 @@ public class RegistrarEscalaController implements Initializable {
        }
     }
 
-    @FXML
     private void salir(ActionEvent event) {
         EscalaListLaunch ull = new EscalaListLaunch();
         ull.launch();

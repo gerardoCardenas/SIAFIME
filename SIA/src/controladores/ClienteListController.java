@@ -95,6 +95,7 @@ public class ClienteListController implements Initializable {
         cll.close();
     }
     
+    @FXML
     private void buscar(ActionEvent event) {
         data.clear();
         Conexion c1 = new Conexion();
@@ -172,6 +173,7 @@ public class ClienteListController implements Initializable {
     }
     
     //Hacer la opcion para editar o eliminar Algun registro
+    @FXML
     private void opcionesUsuario(ContextMenuEvent event) {
         ContextMenu menu = new ContextMenu();
         MenuItem itemEditar =new MenuItem("Editar");
@@ -187,7 +189,6 @@ public class ClienteListController implements Initializable {
                 rcl3.launch();
                 ClienteListLaunch cll = new ClienteListLaunch();
                 cll.close();
-                
             }
         });
         menu.getItems().add(itemEditar);

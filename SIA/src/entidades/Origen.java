@@ -166,6 +166,10 @@ public class Origen {
         }
         return val;
     }
+
+    public Origen(int aerolinea) {
+        this.aerolinea = aerolinea;
+    }
     
     public boolean delete(){
         Conexion cm = new Conexion();

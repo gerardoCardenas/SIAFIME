@@ -19,5 +19,8 @@
         </columns>
       </TableView>
       <Hyperlink layoutX="773.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
+      <Label layoutX="35.0" layoutY="49.0" text="Buscar" />
+      <TextField fx:id="txfBusc" layoutX="88.0" layoutY="45.0" />
+      <Button fx:id="btnButton" defaultButton="true" layoutX="262.0" layoutY="45.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar" />
    </children>
 </AnchorPane>

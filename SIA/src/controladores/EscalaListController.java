@@ -7,6 +7,7 @@ package controladores;
 
 import db.Conexion;
 import entidades.Escala;
+import facade.EscalaFecade;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,14 +17,18 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.ContextMenuEvent;
 import javax.swing.JOptionPane;
 import lanzadores.AdministradorLaunch;
 import lanzadores.EscalaListLaunch;
@@ -127,5 +132,46 @@ public class EscalaListController implements Initializable {
         }
     }
     
-    
+     //Hacer la opcion para editar o eliminar Algun registro
+    @FXML
+    private void opcionesUsuario(ContextMenuEvent event) {
+        ContextMenu menu = new ContextMenu();
+        MenuItem itemEditar =new MenuItem("Editar");
+        MenuItem itemEliminar = new MenuItem("Eliminar");
+        MenuItem itemActualizar = new MenuItem("Actualizar");
+        itemEditar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Escala escala = tabEscala.getSelectionModel().getSelectedItem();
+                EscalaFecade.setUsuario(escala);
+                EscalaFecade.setEstado("Editar");
+                /*RegistrarEscalaLaunch rul3 = new RegistrarEscalaLaunch();
+                rul3.launch();
+                UsuarioListLaunch ull = new UsuarioListLaunch();
+                ull.close();*/
+                
+            }
+        });
+        menu.getItems().add(itemEditar);
+        tabEscala.setContextMenu(menu);
+        itemEliminar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                Escala s = new Escala();
+                s = tabEscala.getSelectionModel().getSelectedItem();
+                s.delete();
+                data.clear();
+                rellenarTabla();
+            }
+        });
+        menu.getItems().add(itemEliminar);
+        itemActualizar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                rellenarTabla();
+            }
+        });
+        menu.getItems().add(itemActualizar);
+        tabEscala.setContextMenu(menu);
+    }
 }

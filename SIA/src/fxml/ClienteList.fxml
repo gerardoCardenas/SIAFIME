@@ -15,9 +15,9 @@
          </font>
       </Label>
       <TextField id="txtFCliente" fx:id="txtFCliente" layoutX="120.0" layoutY="41.0" prefHeight="25.0" prefWidth="340.0" />
-      <Button id="btnBuscar" fx:id="btnBuscar" defaultButton="true" layoutX="502.0" layoutY="41.0" mnemonicParsing="false" text="Buscar" />
+      <Button id="btnBuscar" fx:id="btnBuscar" defaultButton="true" layoutX="502.0" layoutY="41.0" mnemonicParsing="false" onAction="#buscar" text="Buscar" />
       <Button id="btnNuevo" fx:id="btnNuevo" defaultButton="true" layoutX="563.0" layoutY="41.0" mnemonicParsing="false" onAction="#nuevo" text="Nuevo" />
-      <TableView id="tvCliente" fx:id="tvCliente" layoutX="20.0" layoutY="86.0" prefHeight="487.0" prefWidth="820.0">
+      <TableView id="tvCliente" fx:id="tvCliente" layoutX="20.0" layoutY="86.0" onContextMenuRequested="#opcionesUsuario" prefHeight="487.0" prefWidth="820.0">
         <columns>
             <TableColumn id="tbClmNCli" fx:id="tbClmNCli" prefWidth="58.0" text="N°Cliente" />
           <TableColumn id="tbClmNombre" fx:id="tbClmNombre" prefWidth="71.0" text="Nombre" />

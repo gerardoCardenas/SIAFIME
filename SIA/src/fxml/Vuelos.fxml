@@ -7,22 +7,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.VuelosController">
+<AnchorPane id="AnchorPane" prefHeight="593.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.VuelosController">
    <children>
-      <TableView id="tvVuelo" fx:id="tvVuelo" layoutX="7.0" layoutY="113.0" onContextMenuRequested="#opciones" prefHeight="467.0" prefWidth="843.0">
+      <TableView id="tvVuelo" fx:id="tvVuelo" layoutX="7.0" layoutY="113.0" onContextMenuRequested="#opciones" prefHeight="474.0" prefWidth="987.0">
         <columns>
             <TableColumn id="tbcIdVuelo" fx:id="tbcIdVuelo" prefWidth="70.0" text="N° Vuelo" />
-          <TableColumn id="tbcCapacidad" fx:id="tbcCapacidad" minWidth="0.0" prefWidth="74.0" text="Capacidad" />
-            <TableColumn id="tbcOri" fx:id="tbcOri" prefWidth="75.0" text="Id Origen" />
-            <TableColumn id="tbcDest" fx:id="tbcDest" prefWidth="75.0" text="Id Destino" />
-            <TableColumn id="tbcPre" fx:id="tbcPre" prefWidth="75.0" text="Precio Base" />
-            <TableColumn id="tbcMod" fx:id="tbcMod" prefWidth="137.0" text="Modelo Avion" />
-            <TableColumn id="tbcIdEsc" fx:id="tbcIdEsc" prefWidth="147.0" text="Id Escala" />
-            <TableColumn id="tbcAerolineas" fx:id="tbcAerolineas" prefWidth="189.0" text="Id Aerolinea" />
-            <TableColumn id="tbcAero" fx:id="tbcAero" prefWidth="300.0" text="Destino" />
+          <TableColumn id="tbcCapacidad" fx:id="tbcCapacidad" minWidth="0.0" prefWidth="101.0" text="Capacidad" />
+            <TableColumn id="tbcOri" fx:id="tbcOri" prefWidth="84.0" text="Id Origen" />
+            <TableColumn id="tbcDest" fx:id="tbcDest" prefWidth="92.0" text="Id Destino" />
+            <TableColumn id="tbcPre" fx:id="tbcPre" prefWidth="100.0" text="Precio Base" />
+            <TableColumn id="tbcMod" fx:id="tbcMod" prefWidth="112.0" text="Modelo Avion" />
+            <TableColumn id="tbcIdEsc" fx:id="tbcIdEsc" prefWidth="78.0" text="Id Escala" />
+            <TableColumn id="tbcAerolineas" fx:id="tbcAerolineas" minWidth="0.0" prefWidth="114.0" text="Id Aerolinea" />
+            <TableColumn id="tbcAero" fx:id="tbcAero" prefWidth="234.0" text="Destino" />
         </columns>
       </TableView>
-      <Label layoutX="511.0" layoutY="14.0" text="Lista De Vuelos">
+      <Label layoutX="553.0" layoutY="14.0" text="Lista De Vuelos">
          <font>
             <Font name="Liberation Mono Bold" size="31.0" />
          </font>
@@ -33,9 +33,8 @@
          </font>
       </Label>
       <TextField fx:id="txfBuscar" layoutX="43.0" layoutY="57.0" prefHeight="25.0" prefWidth="266.0" />
-      <Button fx:id="btnBuscar" layoutX="324.0" layoutY="57.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Buscar" />
-      <Hyperlink layoutX="784.0" layoutY="14.0" onAction="#regresar" text="Regresar" />
-      <ComboBox prefWidth="150.0" />
-      <ComboBox id="cbClase" fx:id="cbClase" layoutX="511.0" layoutY="57.0" prefWidth="150.0" promptText="Seleccione la clase" />
+      <Button fx:id="btnBuscar" layoutX="314.0" layoutY="57.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="91.0" text="Buscar" />
+      <Hyperlink layoutX="926.0" layoutY="3.0" onAction="#regresar" text="Regresar" />
+      <ComboBox id="cbClase" fx:id="cbClase" layoutX="554.0" layoutY="57.0" prefHeight="25.0" prefWidth="172.0" promptText="Seleccione la clase" />
    </children>
 </AnchorPane>
